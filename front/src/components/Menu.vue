@@ -1,33 +1,45 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap bg-blue-900 p-6 sticky top-0">
+  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky opacity-90">
 
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <img src="../assets/t.png" class="w-10 mr-2">
+    <button class="flex items-center text-white p-1 px-2 md:ml-12 hover:bg-blue-200 rounded-full mx-auto my-1 md:my-auto">
+        <img src="../assets/t.png" class="w-10">
+        <RouterLink to="/" class="font-semibold text-2xl tracking-tight hover:text-blue-950">TikTravel</RouterLink>
+        <!-- <span class="font-semibold text-xl tracking-tight"><RouterLink to="/">TikTravel</RouterLink></span> -->
+    </button>
 
-      <span class="font-semibold text-xl tracking-tight"><RouterLink to="/">TikTravel</RouterLink></span>
+    <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
+      <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
+        <button class="hover:bg-blue-200 rounded-3xl p-3 group">
+          <RouterLink to="/alojamientos" class="text-white p-1 group-hover:text-blue-950">Alojamientos</RouterLink>
+        </button>
+        <button class="hover:bg-blue-200 rounded-3xl p-3 group">
+          <RouterLink to="/vuelos" class="text-white p-1 group-hover:text-blue-950">Vuelos</RouterLink>
+        </button>
+        <button class="hover:bg-blue-200 rounded-3xl p-3 group">
+          <RouterLink to="/publicaciones" class="text-white p-1 group-hover:text-blue-950">Publicaciones</RouterLink>
+        </button>
+      </div>
     </div>
 
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-sm lg:flex-grow">
-        <a class="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
-          <RouterLink to="/alojamientos">Alojamientos</RouterLink>
-        </a>
-        <a class="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
-          <RouterLink to="/vuelos">Vuelos</RouterLink>
-        </a>
-        <a class="block mt-4 lg:inline-block lg:mt-0 text-white">
-          <RouterLink to="/publicaciones">Publicaciones</RouterLink>
-        </a>
-      </div>
-      <div>
-        <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Iniciar sesión</a>
-      </div>
+    <!-- <div class="text-sm flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
+      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
+        <RouterLink to="/alojamientos" class="text-white p-1 hover:text-blue-950">Alojamientos</RouterLink>
+      </button>
+      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
+        <RouterLink to="/vuelos" class="text-white p-1 hover:text-blue-950">Vuelos</RouterLink>
+      </button>
+      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
+        <RouterLink to="/publicaciones" class="text-white p-1 hover:text-blue-950">Publicaciones</RouterLink>
+      </button>
+    </div> -->
+
+    <div>
+      <button class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <!-- aqui vvael routerlink sin <a></a> -->
+        <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2">Iniciar sesión</a>
+      </button>
     </div>
   </nav>
-    <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
 </template>
   
   <script setup>

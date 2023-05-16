@@ -1,9 +1,11 @@
 <script setup>
- import { RouterLink, RouterView } from 'vue-router'
+ import {RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 
 import Menu from './components/Menu.vue'
 import Footer from './components/Footer.vue'
+import HomeView from './views/HomeView.vue';
+
 </script>
 
 <template>
