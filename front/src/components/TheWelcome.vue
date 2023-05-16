@@ -1,86 +1,180 @@
+<template>
+  <div id="fondo" class=" flex flex-col sm:justify-start sm:items-center min-h-screen bg-center">
+    <div class="mt-2">
+        <h1 id="animacion"> <p id="text" class="show text-9xl text-white">Bienvenido!</p></h1>
+        <!-- <h1 id="animacion" class="text-4xl justify-center flex text-white"><img src="../../assets/t.png" alt="logo" class="w-10"> <p id="text">Tik Travel</p></h1> -->
+    </div>
+
+    <div class="container mx-auto w-full h-full">
+
+      <div class="relative wrap overflow-hidden p-10 h-full">
+
+        <div class="border-2-2 absolute border-opacity-50 border-white border-dashed h-full border" style="left: 50%"></div>
+
+        <!-- right timeline -->
+        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+          <div class="order-1 w-5/12"></div>
+
+          <div class="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+            <h1 class="mx-auto font-semibold text-lg text-gray-800">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </h1>
+          </div>
+
+          <div id="animacion2" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+            <div class="flex">
+              <img src="https://cdn1.iconfinder.com/data/icons/rcons-basic-work-and-office/16/internet_world_network_web_planet_earth_globe-512.png" class="mt-1 mr-2 w-6 h-6">
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">¡Descubre el mundo con nosotros!</h3>
+            </div>
+
+            <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100 text-justify">
+              En nuestro sitio web encontrarás una amplia variedad de destinos, 
+              paquetes y ofertas de viaje para que puedas planificar tus vacaciones de manera fácil y conveniente.
+              <b>¡Estamos seguros de que encontrarás el viaje perfecto para ti!</b>
+            </p>
+
+          </div>
+        </div>
+    
+        <!-- left timeline -->
+        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+          <div class="order-1 w-5/12"></div>
+
+          <div class="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+            <h1 class="mx-auto text-gray-800 font-semibold text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </h1>
+          </div>
+
+          <div id="animacion3" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+            <div class="flex">
+              <img src="https://cdn3.iconfinder.com/data/icons/camping-icons/369/Compass-512.png" class="mt-1 mr-2 w-6 h-6">
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">¿Qué es lo que buscas?</h3>
+            </div>
+
+            <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100 text-justify">
+              ¿Unas vacaciones relajantes en la playa? ¿O prefieres aventurarte en una ciudad desconocida? 
+              ¿Quieres un viaje de lujo o una escapada económica? Tenemos todo lo que necesitas para crear el viaje de tus sueños.
+            </p>
+
+          </div>
+        </div>
+        
+        <!-- right timeline -->
+        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+          <div class="order-1 w-5/12"></div>
+
+          <div class="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+            <h1 class="mx-auto font-semibold text-lg text-gray-800">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </h1>
+          </div>
+
+          <div id="animacion2" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+            <div class="flex">
+              <img src="https://cdn1.iconfinder.com/data/icons/business-1508/32/Teamwork-512.png" class="mr-2 w-7 h-7">
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">Nuestro Equipo</h3>
+            </div>
+
+            <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
+              Contamos con un equipo de expertos en viajes que están disponibles para ayudarte en todo momento. 
+              Ya sea que necesites asesoramiento para elegir un destino, hacer una reserva o resolver cualquier problema durante tu viaje, estamos aquí para ayudarte.
+            </p>
+
+          </div>
+        </div>
+    
+        <!-- left timeline -->
+        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+          <div class="order-1 w-5/12"></div>
+
+          <div class="z-20 flex items-center order-1 bg-white shadow-xl w-8 h-8 rounded-full">
+            <h1 class="mx-auto text-gray-800 font-semibold text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </h1>
+          </div>
+
+          <div id="animacion3" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+            <div class="flex">
+              <img src="https://cdn0.iconfinder.com/data/icons/freebies-2/24/like-1-512.png" class="mr-2 w-6 h-6">
+              <h3 class="mb-3 font-bold text-gray-800 text-xl">Garantizamos una experiencia inolvidable</h3>
+            </div>
+
+            <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100 text-justify">
+              Queremos que tus vacaciones sean perfectas, desde el momento en que planeas tu viaje hasta el momento en que regresas a casa.
+              Explora nuestro sitio web para descubrir todas nuestras ofertas y paquetes de viaje. 
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+</div>
+</template>
+
 <script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
 </script>
 
-<template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+<style>
+#fondo {
+  background-image: url('../assets/f3.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#animacion {
+  animation: anim-lineUp 3s;
+}
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
+#animacion2{
+  animation: fadeInRight 2s ease-in-out;
+}
+#animacion3{
+  animation: fadeInLeft 2s ease-in-out;
+}
+@keyframes fadeInLeft{
+  from{
+    opacity: 0;
+    transform: translate(-30px);
+  }
+  to{
+    opacity: 1;
+  }
+}
 
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
+@keyframes fadeInRight{
+  from{
+    opacity: 0;
+    transform: translate(30px);
+  }
+  to{
+    opacity: 1;
+  }
+}
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank">Cypress Component Testing</a>.
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 
-    <br />
-
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
-</template>
+#text {
+  font-family: 'Lobster';
+}
+</style>

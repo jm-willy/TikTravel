@@ -9,13 +9,13 @@ from django.contrib.sessions.backends.db import SessionStore
 from django.core.exceptions import PermissionDenied
 from ninja.security import django_auth
 import vue_view.views
-from models import Picture
+from api_auth.models import Picture
 
 #########
-api = NinjaAPI(csrf=True)
+api = NinjaAPI(csrf=True,urls_namespace='api_auth')
 
 
-@api.get("/hi")
+@api.get("/hi",auth=django_auth)
 def hello(request):
     return "Hiii (auth)"
 
