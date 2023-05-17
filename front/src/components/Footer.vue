@@ -1,7 +1,7 @@
 <template>
-    <footer class=" w-full bg-blue-900 body-font opacity-90">
+    <footer class=" w-full bg-blue-900 body-font opacity-90 border-t border-blue-800">
         <div
-            class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
+            class="container flex flex-col flex-wrap px-5 py-11 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
             <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
                 <a class="flex items-center justify-center font-medium text-white title-font md:justify-start">
                    <p id="text" class="flex text-3xl"><img src="../assets/t.png" alt="logo" class="w-9 mr-3">Tik Travel</p>
@@ -14,7 +14,7 @@
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                             </svg>
                         </a>
-                        <a class="ml-3 text-gray-400 cursor-pointer hover:text-white">
+                        <a class="ml-3 text-gray-400 cursor-pointer hover:text-white hover:underline">
                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 class="w-5 h-5" viewBox="0 0 24 24">
                                 <path
@@ -101,9 +101,9 @@
                 </div>
             </div>
         </div>
-        <div class="bg-gray-300">
-            <div class="container px-5 py-4 mx-auto">
-                <p class="text-sm text-gray-700 capitalize xl:text-center">© 2023 Tik Travel</p>
+        <div class="bg-blue-200">
+            <div class="container px-5 mx-auto">
+                <p class="text-sm font-bold text-gray-700 capitalize text-center">© 2023 Tik Travel</p>
             </div>
         </div>
     </footer>
