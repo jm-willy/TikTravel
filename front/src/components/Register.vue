@@ -66,7 +66,6 @@
                                         <p class="text-sm">¿Ya tienes cuenta?<RouterLink to="/login" class=" hover:text-blue-700 font-bold">  Entra aquí</RouterLink></p>
                                     </div>
 
-                                        <!-- <button type="submit" class="py-0.5 px-3 bg-transparent text-blue-600 font-semibold border border-blue-600 rounded hover:bg-blue-600 hover:text-white hover:border-transparent transition ease-in duration-200">Enviar</button> -->
                                         <button type="submit" class="flex items-center justify-center">  
                                             <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
                                                 <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
