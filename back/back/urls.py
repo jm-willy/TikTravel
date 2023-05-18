@@ -26,8 +26,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', api_no_auth.api.api.urls),
     path('api-auth/', api_auth.api.api.urls),
-    path('', vue_view.views.vue_index),
-    path('about', vue_view.views.vue_index),
+    path('home', vue_view.views.vue_index),
+    path('alojamientos', vue_view.views.vue_index),
+    path('vuelos', vue_view.views.vue_index),
+    path('publicaciones', vue_view.views.vue_index),
+    path('login', vue_view.views.vue_index),
+    path('register', vue_view.views.vue_index),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # dev only, managed by django

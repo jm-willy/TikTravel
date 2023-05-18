@@ -46,7 +46,7 @@
                                         <p class="text-sm">¿No tienes cuenta?<RouterLink to="/register" class="hover:text-blue-700 font-bold">  Entra aquí</RouterLink></p>
                                     </div>
                                 
-                                    <button type="submit" class="flex items-center justify-center">  
+                                    <button type="submit" class="flex items-center justify-center" @click="log_user">  
                                         <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
                                             <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
                                             <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
@@ -75,10 +75,30 @@
 </template>
 
 <style>
-#fondo1{
-    background-image: url(../assets/f.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    #fondo1{
+        background-image: url(../assets/f.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
+
+<script setup>
+    import axios from 'axios'
+
+    function log_user() {
+        axios.get('https://pokeapi.co/api/v2/pokemon/1')
+        .then(function (response) {
+            // handle success
+            console.log(response.data.name, 2);
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+            alert(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+    }
+</script>
