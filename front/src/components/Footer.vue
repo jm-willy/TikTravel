@@ -46,7 +46,7 @@
                     <h2 class="mb-3 text-sm font-extrabold tracking-widest text-white uppercase title-font">About</h2>
                     <nav class="mb-10 list-none">
                         <li class="mt-3">
-                            <a class="text-gray-400 cursor-pointer hover:text-white"><RouterLink to="/alojamientos">Alojamientos</RouterLink></a>
+                            <a class="text-gray-400 cursor-pointer hover:text-white">Company</a>
                         </li>
                         <li class="mt-3">
                             <a class="text-gray-400 cursor-pointer hover:text-white">Careers</a>
