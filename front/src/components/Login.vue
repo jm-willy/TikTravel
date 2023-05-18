@@ -85,20 +85,28 @@
 
 <script setup>
     import axios from 'axios'
+    import {UserStatusStore} from '@/stores/user_status'
+    import {ApiHostStore} from '@/stores/api_hosts'
+
+    const user_store = UserStatusStore()
+    const api_store = ApiHostStore()
 
     function log_user() {
-        axios.get('https://pokeapi.co/api/v2/pokemon/1')
+        console.log(api_store.get_host);
+        // axios.get('https://pokeapi.co/api/v2/pokemon/1')
+        axios.get(api_store.get_host+'api/hi/')
         .then(function (response) {
-            // handle success
-            console.log(response.data.name, 2);
+            console.log(response);
+            user_store.yes_logged();
         })
         .catch(function (error) {
-            // handle error
             console.log(error);
             alert(error);
+            user_store.not_logged();
+
         })
         .finally(function () {
-            // always executed
+            console.log('logged =', user_store.logged);
         });
     }
 </script>
