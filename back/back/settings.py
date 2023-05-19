@@ -20,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 VUE_DIR = BASE_DIR.parent
 VUE_DIR = os.path.join(VUE_DIR, 'front')
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -30,11 +29,9 @@ SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
+ALLOWED_HOSTS = ['example']
 
-# cambiar al host real en produccion
-ALLOWED_HOSTS = ['localhost:8000', 'localhost', '127.0.0.1:8000', '127.0.0.1']
+########################
 
 
 # Application definition
@@ -151,9 +148,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # url en la que se sirven las imagenes
 MEDIA_URL = 'media/'
 
-
-# debug settings
+# debug only settings
 if DEBUG:
+    import logging
+    logging.warning('DEBUG = True, insecure settings active')
+    ALLOWED_HOSTS += ['localhost:8000', 'localhost', '127.0.0.1:8000', '127.0.0.1']
     CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
     INSTALLED_APPS.insert(0, 'corsheaders',)
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
