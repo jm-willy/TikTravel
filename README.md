@@ -5,7 +5,7 @@
 3. pip install django-ninja
 4. npm install vue
 5. git clone este proyecto en C:\TikTravel
-6. python manage.py migrate para hacer las tablas de la base de datos
+6. python manage.py makemigrations y luego python manage.py migrate para hacer las tablas de la base de datos
 8. npm run dev para hacer el front
 9. python manage.py runserver y npm run build para hacer el back
 
@@ -54,3 +54,8 @@ En los docs se pueden probar los endpoints
     - main.js
   - index.html
   - .config.js
+
+## Despliegue
+- DEBUG = False
+- python manage.py collectstatic
+- npm run build
