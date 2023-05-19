@@ -54,3 +54,8 @@ En los docs se pueden probar los endpoints
     - main.js
   - index.html
   - .config.js
+
+## Despliegue
+- DEBUG = False
+- python manage.py collectstatic
+- npm run build
