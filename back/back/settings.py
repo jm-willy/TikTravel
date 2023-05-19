@@ -153,7 +153,6 @@ MEDIA_URL = 'media/'
 
 
 # debug settings
-DEBUG = True
 if DEBUG:
     CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
     INSTALLED_APPS.insert(0, 'corsheaders',)

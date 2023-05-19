@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', api_no_auth.api.api.urls),
     path('api-auth/', api_auth.api.api.urls),
+    path('', vue_view.views.vue_index),
     path('home', vue_view.views.vue_index),
     path('alojamientos', vue_view.views.vue_index),
     path('vuelos', vue_view.views.vue_index),
