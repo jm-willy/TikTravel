@@ -150,3 +150,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url en la que se sirven las imagenes
 MEDIA_URL = 'media/'
+
+
+# debug settings
+DEBUG = True
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
+    INSTALLED_APPS.insert(0, 'corsheaders',)
+    MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+    CORS_ALLOWED_ORIGINS = ['http://localhost:5173',]
+    CORS_URLS_REGEX = r"^/api/.*$"

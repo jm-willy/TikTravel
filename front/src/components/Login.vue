@@ -92,9 +92,8 @@
     const api_store = ApiHostStore()
 
     function log_user() {
-        console.log(api_store.get_host);
-        // axios.get('https://pokeapi.co/api/v2/pokemon/1')
-        axios.get(api_store.get_host+'api/hi/')
+        // axios.get(api_store.get_host+'api-auth/hi')
+        axios.get(api_store.get_host+'api/hi')
         .then(function (response) {
             console.log(response);
             user_store.yes_logged();
