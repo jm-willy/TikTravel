@@ -151,7 +151,7 @@ MEDIA_URL = 'media/'
 # debug only settings
 if DEBUG:
     import logging
-    logging.warning('DEBUG = True, insecure settings active')
+    logging.warning('*** DEBUG = True, insecure settings active ***')
     ALLOWED_HOSTS += ['localhost:8000', 'localhost', '127.0.0.1:8000', '127.0.0.1']
     CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
     INSTALLED_APPS.insert(0, 'corsheaders',)
