@@ -62,20 +62,19 @@ methods: {
     }
     },
   },
-mounted() {
-  // Aquí puedes realizar la conexión con la base de datos y obtener los datos
-  // Por ejemplo, utilizando axios para hacer una solicitud HTTP
-  axios.get('/api/data').then(response => {
-    this.data = response.data;
-  }).catch(error => {
-    console.error(error);
-  });
-},
+// mounted() {
+//   // Aquí puedes realizar la conexión con la base de datos y obtener los datos
+//   // Por ejemplo, utilizando axios para hacer una solicitud HTTP
+//   axios.get('/api/data').then(response => {
+//     this.data = response.data;
+//   }).catch(error => {
+//     console.error(error);
+//   });
+// },
 };
 </script>
 
 <template>
-    <AuthenticatedLayout>
       <div class="container mx-auto py-4">
         <div class="flex justify-between items-center mb-4">
           <div class="flex items-center">
@@ -130,7 +129,6 @@ mounted() {
           </div>
         </div>
       </div>
-    </AuthenticatedLayout>
 </template>
 
 <script setup>
