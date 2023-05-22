@@ -19,20 +19,25 @@ def hello(request):
     return "Hiii (no auth)"
 
 # cada atributo name del input tiene que ser igual a lo que aparece abajo
-class UserIn(Schema):
+class UserSignIn(Schema):
     usern: str = None
     passw: str = None
     email: str = None
 
 @api.post("/sign")
-def sign(request, user_in: UserIn = Form(...)):
+def sign(request, user_in: UserSignIn = Form(...)):
     User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
     # user = User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
     # user.save()
     return '200 OK'
+
+# cada atributo name del input tiene que ser igual a lo que aparece abajo
+class UserLogIn(Schema):
+    usern: str = None
+    passw: str = None
     
 @api.post("/log")
-def log(request, user_in: UserIn = Form(...)):
+def log(request, user_in: UserLogIn = Form(...)):
     try:
         user = authenticate(username=user_in.username, password=user_in.passw)
         login(request, user)
