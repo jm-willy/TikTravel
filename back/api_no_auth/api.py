@@ -19,31 +19,36 @@ def hello(request):
     return "Hiii (no auth)"
 
 # cada atributo name del input tiene que ser igual a lo que aparece abajo
-class UserSignIn(Schema):
+class UserIn(Schema):
     usern: str = None
     passw: str = None
     email: str = None
 
 @api.post("/sign")
-def sign(request, user_in: UserSignIn = Form(...)):
+def sign(request, user_in: UserIn = Form(...)):
     User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
     # user = User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
     # user.save()
     return '200 OK'
 
-# cada atributo name del input tiene que ser igual a lo que aparece abajo
-class UserLogIn(Schema):
-    usern: str = None
-    passw: str = None
+# # cada atributo name del input tiene que ser igual a lo que aparece abajo
+# class UserLogIn(Schema):
+#     usern: str = None
+#     passw: str = None
     
 @api.post("/log")
-def log(request, user_in: UserLogIn = Form(...)):
+def log(request, user_in: UserIn = Form(...)):
     try:
         user = authenticate(username=user_in.usern, password=user_in.passw)
         login(request, user)
         return '200 OK'
     except PermissionDenied:
         return '401 Unauthorized'
+    except AttributeError:
+            try:
+                User.objects.get(username=user_in.usern)
+            except User.DoesNotExist:
+                return '404 Not found'
     
 
 from api_auth.models import Picture, ProfilePic
@@ -54,6 +59,6 @@ def user_pics(request, n: int):
     return {'pics_src': [i.url for i in pics]}
 
 @api.get('/profile-pic')
-def user_pics(request):
+def user_pic(request):
     pic = ProfilePic.objects.get(id=1)
     return {'profile_pic_src': pic.url}
