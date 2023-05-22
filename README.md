@@ -1,8 +1,7 @@
 ## Guía
 
 1. Crear TikTravel en C:\
-2. pip install django
-3. pip install django-ninja
+2. pip install -r requirements.txt
 4. npm install vue
 5. git clone este proyecto en C:\TikTravel
 6. python manage.py makemigrations y luego python manage.py migrate para hacer las tablas de la base de datos
