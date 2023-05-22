@@ -132,6 +132,7 @@ mounted() {
       </div>
     </AuthenticatedLayout>
 </template>
+
 <script setup>
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore()

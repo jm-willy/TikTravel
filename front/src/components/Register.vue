@@ -1,6 +1,6 @@
 <template>
     <form action="">
-        <div class="bg-gray-300 min-h-screen py-6 flex flex-col justify-center sm:py-12">
+        <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
 
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">
     
@@ -30,7 +30,7 @@
                                 </div>
     
                                 <div class="relative">
-                                    <input autocomplete="off" id="email" name="email" type="email" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" required/>
+                                    <input autocomplete="off" id="email" name="email" type="email" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email_address" required/>
                                     <label for="email" class=" flex absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-1 w-4 bi bi-envelope" viewBox="0 0 16 16">
                                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
@@ -47,17 +47,6 @@
                                             <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
                                           </svg>
                                         Contraseña
-                                    </label>
-                                </div>
-    
-                                <div class="relative">
-                                    <input autocomplete="off" id="confirmpassword" name="confirmpassword" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Confirm password" required/>
-                                    <label for="confirmpassword" class="flex absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-1 w-4 bi bi-file-lock2-fill" viewBox="0 0 16 16">
-                                            <path d="M7 6a1 1 0 0 1 2 0v1H7V6z"/>
-                                            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 6v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V8.3c0-.627.46-1.058 1-1.224V6a2 2 0 1 1 4 0z"/>
-                                          </svg>
-                                        Confirmar contraseña
                                     </label>
                                 </div>
 
@@ -91,10 +80,12 @@
         
     </form>
 </template>
+
 <script setup>
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore()
 </script>
+
 <style>
 #fondo1 {
     background-image: url('../assets/f.jpg');

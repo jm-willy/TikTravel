@@ -11,10 +11,10 @@
     <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
       <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
         <button class="p-3">
-          <RouterLink to="/alojamientos" class="text-gray-200 p-1 hover:text-white font-medium">Alojamientos</RouterLink>
+          <RouterLink to="/viajes" class="text-gray-200 p-1 hover:text-white font-medium">Viajes</RouterLink>
         </button>
         <button class="p-3">
-          <RouterLink to="/vuelos" class="text-gray-200 p-1 hover:text-white font-medium">Vuelos</RouterLink>
+          <RouterLink to="/publicaciones" class="text-gray-200 p-1 hover:text-white font-medium">Publicaciones</RouterLink>
         </button>
         <div class=" h-8 w-px bg-gray-300"></div>
         <div class="flex ">

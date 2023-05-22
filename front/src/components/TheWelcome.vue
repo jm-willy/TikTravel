@@ -122,12 +122,10 @@
 
 </div>
 </template>
+
 <script setup>
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore()
-</script>
-
-<script setup>
 </script>
 
 <style>
@@ -147,6 +145,11 @@
 #animacion3{
   animation: fadeInLeft 2s ease-in-out;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
+
 @keyframes fadeInLeft{
   from{
     opacity: 0;
