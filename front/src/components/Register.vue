@@ -91,7 +91,10 @@
         
     </form>
 </template>
-
+<script setup>
+    import {UserStatusStore} from '@/stores/user_status'
+    const user_store = UserStatusStore()
+</script>
 <style>
 #fondo1 {
     background-image: url('../assets/f.jpg');
