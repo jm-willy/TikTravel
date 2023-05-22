@@ -143,6 +143,11 @@
 #animacion3{
   animation: fadeInLeft 2s ease-in-out;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
+
 @keyframes fadeInLeft{
   from{
     opacity: 0;

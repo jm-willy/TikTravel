@@ -39,7 +39,7 @@ class UserLogIn(Schema):
 @api.post("/log")
 def log(request, user_in: UserLogIn = Form(...)):
     try:
-        user = authenticate(username=user_in.username, password=user_in.passw)
+        user = authenticate(username=user_in.usern, password=user_in.passw)
         login(request, user)
         return '200 OK'
     except PermissionDenied:
