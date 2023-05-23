@@ -1,6 +1,6 @@
 <template>
   <!-- Nav no inicio sesión -->
-  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50">
+  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.logged">
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
         <img src="../assets/t.png" class="w-10 mr-2">
@@ -14,80 +14,52 @@
           <RouterLink to="/viajes" class="text-gray-200 p-1 hover:text-white font-medium">Viajes</RouterLink>
         </button>
         <button class="p-3">
-          <RouterLink to="/publicaciones" class="text-gray-200 p-1 hover:text-white font-medium">Publicaciones</RouterLink>
+          <RouterLink to="/descubre" class="text-gray-200 p-1 hover:text-white font-medium">Descubre</RouterLink>
+        </button>
+        <button class="p-3">
+          <RouterLink to="/reservas" class="text-gray-200 p-1 hover:text-white font-medium">Reservas</RouterLink>
+        </button>
+      </div>
+      <button class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <!-- aqui va el routerlink sin <a></a> -->
+        <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a> 
+      </button>
+    </div>
+  </nav>
+
+  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-else>
+
+    <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
+        <img src="../assets/t.png" class="w-10 mr-2">
+        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight" id="text">TikTravel</RouterLink>
+        <!-- <span class="font-semibold text-xl tracking-tight"><RouterLink to="/">TikTravel</RouterLink></span> -->
+    </button>
+
+    <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
+      <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
+        <button class="p-3">
+          <RouterLink to="/viajes" class="text-gray-200 p-1 hover:text-white font-medium">Viajes</RouterLink>
+        </button>
+        <button class="p-3">
+          <RouterLink to="/descubre" class="text-gray-200 p-1 hover:text-white font-medium">Descubre</RouterLink>
         </button>
         <div class=" h-8 w-px bg-gray-300"></div>
-        <div class="flex ">
+        <div class="flex">
           <button class="p-3">
             <!-- aqui vvael routerlink sin <a></a> -->
           <RouterLink to="/login" class="text-white p-1" id="m">Inicia sesión</RouterLink>
-          </button>
-          <button class="p-3">
-            <!-- aqui vvael routerlink sin <a></a> -->
-            <RouterLink to="/register" class="text-white p-1" id="m">Regístrate</RouterLink>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Nav si inicio sesión -->
-
-  <!-- <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 opacity-90 z-50">
-
-    <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
-        <img src="../assets/t.png" class="w-10">
-        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight" id="text">TikTravel</RouterLink>
-    </button>
-
-    <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
-      <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
-        <button class="p-3 ">
-          <RouterLink to="/alojamientos" class="text-gray-200 p-1 hover:text-white font-medium">Alojamientos</RouterLink>
-        </button>
-        <button class="p-3">
-          <RouterLink to="/vuelos" class="text-gray-200 p-1 hover:text-white font-medium">Vuelos</RouterLink>
-        </button>
-        <button class="p-3 ">
-          <RouterLink to="/publicaciones" class="text-gray-200 p-1 hover:text-white font-medium">Publicaciones</RouterLink>
-        </button>
-      </div>
-    </div>
-
-    <div>
-      <button class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        aqui vvael routerlink sin <a></a>
-        <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a> 
-
-        Aqui aparecera un dropdown donde esten las vistas 
-        del perfil(dentro de esta vista se podra cambiar nombre, 
-        contraseña, email, y ver los seguidoresque tiene),reservas 
-        y cerrar sesión.
-        
-      </button>
-    </div>
-  </nav> -->
-
-<!-- ------------------------------------------------------------------------------------------------------- -->
-
-    <!-- <div class="text-sm flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
-      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
-        <RouterLink to="/alojamientos" class="text-white p-1 hover:text-blue-950">Alojamientos</RouterLink>
-      </button>
-      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
-        <RouterLink to="/vuelos" class="text-white p-1 hover:text-blue-950">Vuelos</RouterLink>
-      </button>
-      <button class="hover:bg-blue-200 rounded-3xl p-3 mx-auto">
-        <RouterLink to="/publicaciones" class="text-white p-1 hover:text-blue-950">Publicaciones</RouterLink>
-      </button>
-    </div> -->
-
 </template>
   
-  <script setup>
-
-  </script>
-
+<script setup>
+    import {UserStatusStore} from '@/stores/user_status'
+    const user_store = UserStatusStore()
+</script>
 <style>
 #text {
     font-family: 'Lobster';

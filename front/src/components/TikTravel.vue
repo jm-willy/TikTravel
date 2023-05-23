@@ -30,8 +30,8 @@
             </div>
 
             <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100 text-justify">
-              En nuestro sitio web encontrarás una amplia variedad de destinos, 
-              paquetes y ofertas de viaje para que puedas planificar tus vacaciones de manera fácil y conveniente.
+              En nuestro sitio web encontrarás una amplia variedad de destinos y ofertas de viaje 
+              para que puedas planificar tus vacaciones de manera fácil y conveniente.
               <b>¡Estamos seguros de que encontrarás el viaje perfecto para ti!</b>
             </p>
 
@@ -84,7 +84,7 @@
 
             <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
               Contamos con un equipo de expertos en viajes que están disponibles para ayudarte en todo momento. 
-              Ya sea que necesites asesoramiento para elegir un destino, hacer una reserva o resolver cualquier problema durante tu viaje, estamos aquí para ayudarte.
+              Ya sea que necesites asesoramiento para elegir un destino, hacer una reserva o resolver cualquier problema, estamos aquí para ayudarte.
             </p>
 
           </div>
@@ -109,8 +109,10 @@
             </div>
 
             <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100 text-justify">
-              Queremos que tus vacaciones sean perfectas, desde el momento en que planeas tu viaje hasta el momento en que regresas a casa.
-              Explora nuestro sitio web para descubrir todas nuestras ofertas y paquetes de viaje. 
+              Queremos que tus vacaciones sean inolvidables, desde el momento en que comienzas a planificar 
+              tu viaje hasta el momento en que vuelves a casa. 
+              <br> 
+              <b>Te invitamos a explorar nuestra página web!!!</b>
             </p>
 
           </div>

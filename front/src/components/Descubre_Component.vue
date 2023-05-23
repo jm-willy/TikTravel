@@ -1,4 +1,43 @@
 <template>
+  <div>
+
+    <div class="flex justify-center p-3 bg-gray-200">
+      <ul class="flex items-center flex-shrink-0 space-x-6">
+        <!-- Profile menu -->
+        <li class="relative ">
+          <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
+            <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=203" alt="" aria-hidden="true">
+          </button>
+        </li>
+
+              <li class="relative">
+          <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
+            <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=205" alt="" aria-hidden="true">
+          </button>
+        </li>
+
+              <li class="relative">
+          <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
+            <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=207" alt="" aria-hidden="true">
+          </button>
+        </li>
+
+              <li class="relative">
+          <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
+            <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=209" alt="" aria-hidden="true">
+          </button>
+        </li>
+
+            <li class="relative">
+          <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
+            <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=2011" alt="" aria-hidden="true">
+          </button>
+        </li>
+
+      </ul>
+
+    </div>
+
     <div class="flex justify-center pt-10 pb-10">
         <div class="bg-slate-800 text-white rounded-lg w-full mx-5 md:w-[40rem]  space-y-6 p-10">
        <!-- header -->
@@ -139,6 +178,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
