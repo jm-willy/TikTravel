@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '',
       name: 'home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('../views/TikTravel.vue')
     },
     {
       path: '/viajes',
@@ -14,9 +14,9 @@ const router = createRouter({
       component: () => import('../views/Viajes.vue')
     },
     {
-      path: '/publicaciones',
-      name: 'publicaciones',
-      component: () => import('../views/Publicaciones.vue')
+      path: '/descubre',
+      name: 'descubre',
+      component: () => import('../views/Descubre.vue')
     },
     {
       path: '/login',

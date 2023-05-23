@@ -14,7 +14,7 @@
           <RouterLink to="/viajes" class="text-gray-200 p-1 hover:text-white font-medium">Viajes</RouterLink>
         </button>
         <button class="p-3">
-          <RouterLink to="/publicaciones" class="text-gray-200 p-1 hover:text-white font-medium">Publicaciones</RouterLink>
+          <RouterLink to="/descubre" class="text-gray-200 p-1 hover:text-white font-medium">Descubre</RouterLink>
         </button>
         <button class="p-3">
           <RouterLink to="/reservas" class="text-gray-200 p-1 hover:text-white font-medium">Reservas</RouterLink>
@@ -41,7 +41,7 @@
           <RouterLink to="/viajes" class="text-gray-200 p-1 hover:text-white font-medium">Viajes</RouterLink>
         </button>
         <button class="p-3">
-          <RouterLink to="/publicaciones" class="text-gray-200 p-1 hover:text-white font-medium">Publicaciones</RouterLink>
+          <RouterLink to="/descubre" class="text-gray-200 p-1 hover:text-white font-medium">Descubre</RouterLink>
         </button>
         <div class=" h-8 w-px bg-gray-300"></div>
         <div class="flex">
