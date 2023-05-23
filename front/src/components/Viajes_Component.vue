@@ -2,17 +2,19 @@
     
     <div id="fondo_v">
 
-        <div class="flex items-center justify-center min-h-screen">
+        <div class="flex items-center min-h-screen">
+
+            <div class="text-center pl-10 pr-20">
+                <h1 id="animacion"> <p id="text" class="show md:text-7xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
+            </div>
 
             <div class="max-w-lg lg:w-2/3 px-3">
 
                 <div class="bg-white shadow-xl rounded-lg overflow-hidden">
 
                     <div class="bg-cover bg-center h-56 p-4" style="background-image: url(https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
-                        <button class="flex float-right items-center" data-title="Reservar">
-                            <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
-                              </svg>
+                        <button class="flex float-right bg-gray-600 hover:bg-gray-700 rounded-lg px-1 justify-end">
+                            <a href="#" class="text-sm text-white p-1.5">Reservar</a>
                         </button>
                     </div>
 
@@ -36,7 +38,9 @@
                         
                     </div>
 
-                    <div class="p-4 border-t border-gray-300 flex items-center justify-center">
+                    <h3 id="text" class="border-t border-gray-300 text-center text-3xl p-1">Vuelos</h3>
+
+                    <div class="p-2  flex items-center justify-center">
 
                         <div class="bg-gray-200 flex flex-col w-32 p-3 rounded-xl border-2 border-white">
                             <span class="font-semibold text-sm text-center">Estancia</span>
@@ -97,35 +101,27 @@
 
 <style>
 #fondo_v {
-    background-image: url('../assets/viajes.jpg');
+    background-image: url('../assets/image.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    
   }
 
-[data-title]:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease 0.5s;
-    visibility: visible;
-}
-[data-title]:after {
-    content: attr(data-title);
-    background-color: #172554;
-    color: #fff;
-    font-size: 14px;
-    position: absolute;
-    padding: 3px 20px;
-    bottom: -2.2em;
-    z-index: 99999;
-    left: 100%;
-    box-shadow: 1px 1px 3px #222222;
-    opacity: 0;
-    border-radius: 6px;
-    
-}
-[data-title] {
-    position: absolute;
-}
+  #animacion {
+    animation: anim-lineUp 3s;
+  }
+
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
 .app-container {
     width: 100%;
     height: 100vh;
