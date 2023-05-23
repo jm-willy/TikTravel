@@ -1,6 +1,6 @@
 <template>
   <!-- Nav no inicio sesión -->
-  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.logged">
+  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.is_logged">
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
         <img src="../assets/t.png" class="w-10 mr-2">

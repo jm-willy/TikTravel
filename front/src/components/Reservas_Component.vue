@@ -132,6 +132,13 @@ methods: {
 </template>
 
 <script setup>
+    import {ApiHostStore} from '@/stores/hosts'
     import {UserStatusStore} from '@/stores/user_status'
+
+    const api_host = ApiHostStore()
     const user_store = UserStatusStore()
+
+    if (!(user_store.is_logged)) {
+      window.location.replace("http://localhost:5173/");
+    }
 </script>

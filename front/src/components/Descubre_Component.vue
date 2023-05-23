@@ -180,8 +180,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-    import {UserStatusStore} from '@/stores/user_status'
-    const user_store = UserStatusStore()
-</script>

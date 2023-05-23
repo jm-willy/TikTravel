@@ -125,11 +125,6 @@
 </div>
 </template>
 
-<script setup>
-    import {UserStatusStore} from '@/stores/user_status'
-    const user_store = UserStatusStore()
-</script>
-
 <style>
 #fondo {
   background-image: url('../assets/f3.jpg');

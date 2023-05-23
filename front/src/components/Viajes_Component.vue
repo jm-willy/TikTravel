@@ -15,12 +15,6 @@
     </div>
 </template>
 
-<script setup>
-    import Card from './Card.vue'
-    import {UserStatusStore} from '@/stores/user_status'
-    const user_store = UserStatusStore()
-</script>
-
 <style>
 #fondo_v {
     background-image: url('../assets/image.jpg');

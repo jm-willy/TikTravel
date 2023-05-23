@@ -17,10 +17,12 @@ from django.shortcuts import redirect
 api = NinjaAPI(csrf=True,urls_namespace='api_auth')
 
 
-@api.get("/hi")
+@api.get("/hi", auth=django_auth)
 def hello(request):
-    # return "Hiii (auth)"
-    return redirect(REDIRECT_BASE)
+    import logging
+    from django import middleware
+    logging.warning(middleware.csrf.get_token(request))
+    return "Hiii (auth) - " + repr(middleware.csrf.get_token(request))
 
 @api.get("/logout", auth=django_auth)
 def log_out(request):
