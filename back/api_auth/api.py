@@ -15,7 +15,7 @@ from api_auth.models import Picture
 api = NinjaAPI(csrf=True,urls_namespace='api_auth')
 
 
-@api.get("/hi",auth=django_auth)
+@api.get("/hi", auth=django_auth)
 def hello(request):
     return "Hiii (auth)"
 

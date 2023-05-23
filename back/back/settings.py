@@ -158,3 +158,6 @@ if DEBUG:
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
     CORS_ALLOWED_ORIGINS = ['http://localhost:5173',]
     CORS_URLS_REGEX = r"^/api/.*$"
+    REDIRECT_BASE = 'http://localhost:5173/'
+else:
+    REDIRECT_BASE = ''
