@@ -10,19 +10,22 @@ from django.core.exceptions import PermissionDenied
 from ninja.security import django_auth
 import vue_view.views
 from api_auth.models import Picture
+from back.settings import REDIRECT_BASE
+from django.shortcuts import redirect
 
 #########
 api = NinjaAPI(csrf=True,urls_namespace='api_auth')
 
 
-@api.get("/hi", auth=django_auth)
+@api.get("/hi")
 def hello(request):
-    return "Hiii (auth)"
+    # return "Hiii (auth)"
+    return redirect(REDIRECT_BASE)
 
 @api.get("/logout", auth=django_auth)
 def log_out(request):
     logout(request)
-    return vue_view.views.vue_index(request)
+    return redirect(REDIRECT_BASE)
 
 @api.post("/change-password")
 def sign(request, passw: int = Form(...)):
