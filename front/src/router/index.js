@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/TikTravel.vue')
     },
     {
+      path: '/user/:username',
+      name: 'user',
+      component: () => import('../views/Usuario.vue')
+    },
+    {
       path: '/viajes',
       name: 'viajes',
       component: () => import('../views/Viajes.vue')
