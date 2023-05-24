@@ -17,6 +17,11 @@ from django.db.utils import IntegrityError
 api = NinjaAPI(csrf=False)
 session = SessionStore()
 
+# def home(request, template):
+#     response = render(request, template)  # django.http.HttpResponse
+#     response.set_cookie(key='id', value=1)
+#     return response
+
 @api.get("/hi")
 def hello(request):
     return "Hiii (no auth) - " + repr(request)
@@ -45,7 +50,8 @@ def log(request, user_in: UserLogIn = Form(...)):
     try:
         user = authenticate(username=user_in.usern, password=user_in.passw)
         login(request, user)
-        return api.create_response(request, {'success': True, "message": "Logged in!"}, status=200)
+        # return api.create_response(request, {'success': True, "message": "Logged in!"}, status=200)
+        return redirect(REDIRECT_BASE)
     except PermissionDenied:
         return api.create_response(request, {'success': False, "message": "Incorrect credentials"}, status=401)
     except AttributeError:

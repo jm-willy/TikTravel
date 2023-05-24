@@ -151,13 +151,17 @@ MEDIA_URL = 'media/'
 # debug only settings
 if DEBUG:
     import logging
+    from corsheaders.defaults import default_headers
     logging.warning('*** DEBUG = True, insecure settings active ***')
+    REDIRECT_BASE = 'http://localhost:5173/'
     ALLOWED_HOSTS += ['localhost:8000', 'localhost', '127.0.0.1:8000', '127.0.0.1']
     CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
+    CSRF_COOKIE_SAMESITE = None
+    SESSION_COOKIE_SAMESITE = None
     INSTALLED_APPS.insert(0, 'corsheaders',)
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
-    CORS_ALLOWED_ORIGINS = ['http://localhost:5173',]
-    CORS_URLS_REGEX = r"^/api/.*$"
-    REDIRECT_BASE = 'http://localhost:5173/'
+    CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost']
+    CORS_ALLOW_CREDENTIALS = True
+    CORS_ALLOW_HEADERS = (*default_headers, 'Cookie', 'csrftoken', 'sessionid')
 else:
     REDIRECT_BASE = ''

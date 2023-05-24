@@ -14,15 +14,22 @@ from back.settings import REDIRECT_BASE
 from django.shortcuts import redirect
 
 #########
-api = NinjaAPI(csrf=True,urls_namespace='api_auth')
+
+api = NinjaAPI(csrf=True, urls_namespace='api_auth')
 
 
-@api.get("/hi", auth=django_auth)
+# @api.get("/hi", auth=django_auth)
+@api.get("/hi")
 def hello(request):
     import logging
+    logging.warning('wtf')
+    logging.warning(request.META)
+    # logging.warning(request.META['Cookie'])
+    logging.warning('********************************************')
     from django import middleware
     logging.warning(middleware.csrf.get_token(request))
-    return "Hiii (auth) - " + repr(middleware.csrf.get_token(request))
+    # return "Hiii (auth) - " + repr(middleware.csrf.get_token(request))
+    return api.create_response(request, {'success': True, "message": "Hii, you're still logged in!"}, status=200)
 
 @api.get("/logout", auth=django_auth)
 def log_out(request):

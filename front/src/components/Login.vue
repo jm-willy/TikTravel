@@ -74,34 +74,23 @@
     </form>
 </template>
 
-<style>
+<!-- <button type="button" class="flex items-center justify-center" @click="yes_logged"></button> -->
+<!-- <script setup>
+    
 
-</style>
+    import {UserStatusStore} from '@/stores/user_status'
+    const user_store = UserStatusStore()
+    function yes_logged(){
+        user_store.yes_logged();
+        console.log(81)
+        console.log(user_store.is_logged, 81)
+    }
+</script> -->
 
 <script setup>
-    // import axios from 'axios'
-    // import {UserStatusStore} from '@/stores/user_status'
-    // import {ApiHostStore} from '@/stores/api_hosts'
-
-    // const user_store = UserStatusStore()
-    // const api_store = ApiHostStore()
-
-    // function log_user() {
-    //     // axios.get(api_store.get_host+'api-auth/hi')
-    //     // axios.post(api_store.get_host+'api/log')
-    //     axios.get('https://pokeapi.co/api/v2/pokemon/1')
-    //     .then(function (response) {
-    //         console.log(response);
-    //         user_store.yes_logged();
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //         alert(error);
-    //         user_store.not_logged();
-
-    //     })
-    //     .finally(function () {
-    //         console.log('logged =', user_store.logged);
-    //     });
-    // }
+    import {UserStatusStore} from '@/stores/user_status'
+    const user_store = UserStatusStore();
+    if (user_store.is_logged) {
+    window.location.replace(window.location['origin']+'/');
+    }
 </script>
