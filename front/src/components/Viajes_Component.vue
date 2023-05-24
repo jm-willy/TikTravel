@@ -1,6 +1,12 @@
-    <script setup>
-      import Card from '../components/Card.vue'
-    </script>
+  <script setup>
+    import Card from '../components/Card.vue'
+    var card_list = [Card, Card, Card, Card, Card];
+    // data() {
+    //   return {
+    //     items: [{ message: 'Foo' }, { message: 'Bar' }]
+    //   }
+    // }
+  </script>
 
 <template>
     
@@ -8,11 +14,13 @@
 
         <div class="flex items-center min-h-screen">
 
-            <div class="text-center pl-10 pr-10">
-                <h1 id="animacion"> <p id="text" class="show md:text-7xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
+            <div class="text-center px-10">
+                <h1 id="animacion"> <p id="text" class="show md:text-6xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
             </div>
 
-            <Card/>
+            <section class='px-2 overflow-y-scroll max-h-[39rem]'>
+              <Card v-for="item in card_list" :key="item.id" />
+            </section>
 
         </div>
         

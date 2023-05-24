@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-xl px-3">
+    <div class="max-w-xl px-3 py-4">
 
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
 
