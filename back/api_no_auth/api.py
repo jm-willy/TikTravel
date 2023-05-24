@@ -10,13 +10,21 @@ from django.contrib.auth import logout
 from django.contrib.sessions.backends.db import SessionStore
 from django.core.exceptions import PermissionDenied
 from ninja.security import django_auth
+from back.settings import REDIRECT_BASE
+from django.shortcuts import redirect
+from django.db.utils import IntegrityError
 
 api = NinjaAPI(csrf=False)
 session = SessionStore()
 
+# def home(request, template):
+#     response = render(request, template)  # django.http.HttpResponse
+#     response.set_cookie(key='id', value=1)
+#     return response
+
 @api.get("/hi")
 def hello(request):
-    return "Hiii (no auth)"
+    return "Hiii (no auth) - " + repr(request)
 
 # cada atributo name del input tiene que ser igual a lo que aparece abajo
 class UserSignIn(Schema):
@@ -24,12 +32,13 @@ class UserSignIn(Schema):
     passw: str = None
     email: str = None
 
-@api.post("/sign")
+@api.post("/sign") # 
 def sign(request, user_in: UserSignIn = Form(...)):
-    User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
-    # user = User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
-    # user.save()
-    return '200 OK'
+    try:
+        User.objects.create_user(username=user_in.usern, email=user_in.email, password=user_in.passw)
+        return redirect(REDIRECT_BASE+'login')
+    except IntegrityError:
+        return api.create_response(request, {'success': False, "message": "User or email already registered"}, status=406)
 
 # cada atributo name del input tiene que ser igual a lo que aparece abajo
 class UserLogIn(Schema):
@@ -41,14 +50,15 @@ def log(request, user_in: UserLogIn = Form(...)):
     try:
         user = authenticate(username=user_in.usern, password=user_in.passw)
         login(request, user)
-        return '200 OK'
+        # return api.create_response(request, {'success': True, "message": "Logged in!"}, status=200)
+        return redirect(REDIRECT_BASE)
     except PermissionDenied:
-        return '401 Unauthorized'
+        return api.create_response(request, {'success': False, "message": "Incorrect credentials"}, status=401)
     except AttributeError:
             try:
                 User.objects.get(username=user_in.usern)
             except User.DoesNotExist:
-                return '404 Not found'
+                return api.create_response(request, {'success': False, "message": "Incorrect credentials"}, status=404)
     
 
 from api_auth.models import Picture, ProfilePic

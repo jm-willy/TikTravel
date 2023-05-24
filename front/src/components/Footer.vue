@@ -108,11 +108,3 @@
         </div>
     </footer>
 </template>
-
-<script setup>
-
-</script>
-
-<style>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
   <!-- Nav no inicio sesión -->
-  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.logged">
+  <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.is_logged">
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
         <img src="../assets/t.png" class="w-10 mr-2">
@@ -23,6 +23,10 @@
       <button class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
         <!-- aqui va el routerlink sin <a></a> -->
         <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a> 
+      </button>
+      <button formmethod="get" formaction="http://localhost:8000/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <!-- aqui va el routerlink sin <a></a> -->
+        <!-- <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a>  -->
       </button>
     </div>
   </nav>
@@ -55,11 +59,71 @@
   </nav>
 
 </template>
-  
-<script setup>
+
+<!-- <script setup>
+    import {computed} from "vue";
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore()
+    const logged = computed({
+      get() {
+        console.log(user_store.is_logged, 0)
+        return user_store.is_logged
+      },
+      // set(val) {
+      //   someReactiveRef.value = val
+      // }
+    })
+</script> -->
+  
+<script setup>
+  import {UserStatusStore} from '@/stores/user_status'
+  const user_store = UserStatusStore();
+  import axios from 'axios'
+  import {ApiHostStore} from '@/stores/api_hosts'
+
+  
+  // const user_store = UserStatusStore()
+  // console.log(user_store.is_logged, 0)
+  const api_store = ApiHostStore()
+  const base_host = api_store.get_api_host
+  const axios_instance = axios.create({
+    baseURL: base_host,
+    // headers: {'HTTP_CSFRTOKEN': ''},
+  });
+  
+
+  // import { ref , onBeforeMount, onMounted } from 'vue';
+  // onMounted(() => {
+  //     console.log (user_store.logged, 0);
+  //     api_login_status();
+  //     console.log (user_store.logged, 1);
+  //     window.setInterval(api_login_status, 60*1000);
+  //   });
+  
+  
+  function api_login_status() {
+      // let header = {'csfrtoken': document.cookie};
+      // axios.get(api_store.get_host+'api-auth/hi', {headers: header})
+      // axios.defaults.headers.common['HTTP_CSFRTOKEN'] = document.cookie;
+      // console.log(axios.defaults.headers);
+      axios_instance.get('api-auth/hi')
+      .then(function (response) {
+          console.log(response);
+          user_store.yes_logged();
+      })
+      .catch(function (error) {
+          console.log(error);
+          user_store.not_logged();
+
+      })
+      .finally(function () {
+          console.log('logged =', user_store.is_logged);
+      });
+  }
+  api_login_status();
+  window.setInterval(api_login_status, 60*1000);
 </script>
+
 <style>
 #text {
     font-family: 'Lobster';

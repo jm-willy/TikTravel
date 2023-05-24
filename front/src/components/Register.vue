@@ -1,5 +1,5 @@
 <template>
-    <form action="">
+    <form method="post" action="http://localhost:8000/api/sign">
         <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
 
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -20,7 +20,7 @@
                             <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
 
                                 <div class="relative">
-                                    <input autocomplete="off" id="name" name="name" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Name" required/>
+                                    <input autocomplete="off" id="name" name="usern" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Name" required/>
                                     <label for="name" class=" flex absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-1 w-4 bi bi-person" viewBox="0 0 16 16">
                                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
@@ -40,7 +40,7 @@
                                 </div>
     
                                 <div class="relative">
-                                    <input autocomplete="off" id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" required/>
+                                    <input autocomplete="off" id="password" name="passw" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" required/>
                                     <label for="password" class="flex absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                                         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class=" mr-1 w-4 bi bi-file-lock2" viewBox="0 0 16 16">
                                             <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224z"/>
@@ -80,11 +80,6 @@
         
     </form>
 </template>
-
-<script setup>
-    import {UserStatusStore} from '@/stores/user_status'
-    const user_store = UserStatusStore()
-</script>
 
 <style>
 #fondo1 {

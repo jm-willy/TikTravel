@@ -1,5 +1,5 @@
 <template>
-    <form method="post" action="localhost:8000/api/log">
+    <form method="post" action="http://localhost:8000/api/log">
         <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen flex flex-col justify-center sm:py-12">
 
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -46,7 +46,7 @@
                                         <p class="text-sm">¿No tienes cuenta?<RouterLink to="/register" class="hover:text-blue-700 font-bold">  Entra aquí</RouterLink></p>
                                     </div>
                                 
-                                    <button type="submit" class="flex items-center justify-center" @click="log_user">  
+                                    <button type="submit" class="flex items-center justify-center">  
                                         <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
                                             <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
                                             <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
@@ -74,34 +74,23 @@
     </form>
 </template>
 
-<style>
+<!-- <button type="button" class="flex items-center justify-center" @click="yes_logged"></button> -->
+<!-- <script setup>
+    
 
-</style>
+    import {UserStatusStore} from '@/stores/user_status'
+    const user_store = UserStatusStore()
+    function yes_logged(){
+        user_store.yes_logged();
+        console.log(81)
+        console.log(user_store.is_logged, 81)
+    }
+</script> -->
 
 <script setup>
-    import axios from 'axios'
     import {UserStatusStore} from '@/stores/user_status'
-    import {ApiHostStore} from '@/stores/api_hosts'
-
-    const user_store = UserStatusStore()
-    const api_store = ApiHostStore()
-
-    function log_user() {
-        // axios.get(api_store.get_host+'api-auth/hi')
-        // axios.post(api_store.get_host+'api/log')
-        axios.get('https://pokeapi.co/api/v2/pokemon/1')
-        .then(function (response) {
-            console.log(response);
-            user_store.yes_logged();
-        })
-        .catch(function (error) {
-            console.log(error);
-            alert(error);
-            user_store.not_logged();
-
-        })
-        .finally(function () {
-            console.log('logged =', user_store.logged);
-        });
+    const user_store = UserStatusStore();
+    if (user_store.is_logged) {
+    window.location.replace(window.location['origin']+'/');
     }
 </script>

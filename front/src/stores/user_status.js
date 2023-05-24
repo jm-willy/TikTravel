@@ -2,13 +2,13 @@ import { defineStore } from 'pinia'
 
 
 export const UserStatusStore = defineStore('user status', {
-    state: () => ({ logged: false, admin: false }),
+    state: () => ({ is_logged: false, admin: false }),
     actions: {
       yes_logged() {
-        this.logged = true;
+        this.is_logged = true;
       },
       not_logged() {
-        this.logged = false;
+        this.is_logged = false;
       },
     },
   }
