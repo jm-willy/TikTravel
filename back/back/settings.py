@@ -63,7 +63,7 @@ VUE_TEMPLATE_DIR = os.path.join(VUE_DIR, 'dist/')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [VUE_TEMPLATE_DIR,],
+        'DIRS': [VUE_TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -164,7 +164,6 @@ if DEBUG:
 
     INSTALLED_APPS.insert(0, 'corsheaders',)
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
-    # CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost']
     CORS_ORIGIN_ALLOW_ALL = True
     CORS_ALLOW_CREDENTIALS = True
     CORS_ALLOW_HEADERS = (*default_headers, 'csrftoken', 'sessionid', 'cookies', 'COOKIE', 'COOKIES', 'Cookie')
