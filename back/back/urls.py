@@ -33,7 +33,7 @@ urlpatterns = [
     path('viajes', vue_view.views.vue_index),
     path('descubre', vue_view.views.vue_index),
     path('reservas', vue_view.views.vue_index),
-    path("user/<str:usern>/", vue_view.views.vue_index),
+    path("user/<str:username>/", vue_view.views.user_page),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # dev only, managed by django

@@ -81,26 +81,13 @@
   import axios from 'axios'
   import {ApiHostStore} from '@/stores/api_hosts'
 
-  
-  // const user_store = UserStatusStore()
-  // console.log(user_store.is_logged, 0)
   const api_store = ApiHostStore()
   const base_host = api_store.get_api_host
   const axios_instance = axios.create({
     baseURL: base_host,
     // headers: {'HTTP_CSFRTOKEN': ''},
   });
-  
 
-  // import { ref , onBeforeMount, onMounted } from 'vue';
-  // onMounted(() => {
-  //     console.log (user_store.logged, 0);
-  //     api_login_status();
-  //     console.log (user_store.logged, 1);
-  //     window.setInterval(api_login_status, 60*1000);
-  //   });
-  
-  
   function api_login_status() {
       // let header = {'csfrtoken': document.cookie};
       // axios.get(api_store.get_host+'api-auth/hi', {headers: header})
