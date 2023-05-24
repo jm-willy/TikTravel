@@ -121,7 +121,7 @@
       });
   }
   api_login_status();
-  window.setInterval(api_login_status, 60*1000);
+  window.setInterval(api_login_status, 2*60*1000);
 </script>
 
 <style>
