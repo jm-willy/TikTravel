@@ -1,3 +1,7 @@
+    <script setup>
+      import Card from '../components/Card.vue'
+    </script>
+
 <template>
     
     <div id="fondo_v">
@@ -14,6 +18,7 @@
         
     </div>
 </template>
+
 
 <style>
 #fondo_v {
