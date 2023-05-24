@@ -6,9 +6,9 @@ export const ApiHostStore = defineStore('debug status', {
     getters: {
       get_api_host(state) {
         if (state.debug_host.includes(window.location.origin)) {
-          return state.debug_host;
+          return window.location.origin;
         } else if (window.location.origin == state.dev_host) {
-          return state.debug_host;
+          return state.debug_host[0];
         } else {
           return state.production_host;
         }
