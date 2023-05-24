@@ -31,7 +31,7 @@
 
             <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100 text-justify">
               En nuestro sitio web encontrarás una amplia variedad de destinos y ofertas de viaje 
-              para que puedas planificar tus vacaciones de manera fácil y conveniente.
+              para que puedas planificar tus vacaciones de manera fácil y conveniente. <br>
               <b>¡Estamos seguros de que encontrarás el viaje perfecto para ti!</b>
             </p>
 
@@ -58,7 +58,7 @@
 
             <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100 text-justify">
               ¿Unas vacaciones relajantes en la playa? ¿O prefieres aventurarte en una ciudad desconocida? 
-              ¿Quieres un viaje de lujo o una escapada económica? Tenemos todo lo que necesitas para crear el viaje de tus sueños.
+              ¿Quieres un viaje de lujo o una escapada económica? <br> Tenemos todo lo que necesitas para crear el viaje de tus sueños.
             </p>
 
           </div>
