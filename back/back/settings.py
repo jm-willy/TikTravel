@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['example']
+ALLOWED_HOSTS = ['http://tiktravel.example']
 
 ########################
 
@@ -63,7 +63,7 @@ VUE_TEMPLATE_DIR = os.path.join(VUE_DIR, 'dist/')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [VUE_TEMPLATE_DIR,],
+        # 'DIRS': [VUE_TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,15 +153,20 @@ if DEBUG:
     import logging
     from corsheaders.defaults import default_headers
     logging.warning('*** DEBUG = True, insecure settings active ***')
-    REDIRECT_BASE = 'http://localhost:5173/'
+    # REDIRECT_BASE = 'http://localhost:5173/'
+    REDIRECT_BASE = 'http://localhost:8000/'
     ALLOWED_HOSTS += ['localhost:8000', 'localhost', '127.0.0.1:8000', '127.0.0.1']
-    CSRF_TRUSTED_ORIGINS = ['http://localhost:5173/*']
-    CSRF_COOKIE_SAMESITE = None
-    SESSION_COOKIE_SAMESITE = None
+    CSRF_TRUSTED_ORIGINS = ('http://localhost:5173/*', 'http://localhost:5173', 'http://localhost:5173/')
+    SESSION_COOKIE_DOMAIN = 'localhost'
+    CSRF_COOKIE_DOMAIN = 'localhost'
+
+    #################
+
     INSTALLED_APPS.insert(0, 'corsheaders',)
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
-    CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost']
+    # CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://localhost']
+    CORS_ORIGIN_ALLOW_ALL = True
     CORS_ALLOW_CREDENTIALS = True
-    CORS_ALLOW_HEADERS = (*default_headers, 'Cookie', 'csrftoken', 'sessionid')
+    CORS_ALLOW_HEADERS = (*default_headers, 'csrftoken', 'sessionid', 'cookies', 'COOKIE', 'COOKIES', 'Cookie')
 else:
     REDIRECT_BASE = ''

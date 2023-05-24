@@ -10,20 +10,19 @@ from django.core.exceptions import PermissionDenied
 from ninja.security import django_auth
 import vue_view.views
 from api_auth.models import Picture
-from back.settings import REDIRECT_BASE
+from back.settings import REDIRECT_BASE, DEBUG
 from django.shortcuts import redirect
 
 #########
 
-api = NinjaAPI(csrf=True, urls_namespace='api_auth')
+# if DEBUG:
+api = NinjaAPI(csrf=True, auth=django_auth, urls_namespace='api_auth')
 
 
-# @api.get("/hi", auth=django_auth)
 @api.get("/hi")
 def hello(request):
     import logging
-    logging.warning('wtf')
-    logging.warning(request.META)
+    logging.warning(request.COOKIES)
     # logging.warning(request.META['Cookie'])
     logging.warning('********************************************')
     from django import middleware
@@ -31,7 +30,7 @@ def hello(request):
     # return "Hiii (auth) - " + repr(middleware.csrf.get_token(request))
     return api.create_response(request, {'success': True, "message": "Hii, you're still logged in!"}, status=200)
 
-@api.get("/logout", auth=django_auth)
+@api.get("/logout")
 def log_out(request):
     logout(request)
     return redirect(REDIRECT_BASE)
