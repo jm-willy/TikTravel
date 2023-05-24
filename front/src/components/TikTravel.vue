@@ -147,6 +147,11 @@
   display: none;
 }
 
+*{
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
 @keyframes fadeInLeft{
   from{
     opacity: 0;
