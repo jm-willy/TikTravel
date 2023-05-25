@@ -20,14 +20,16 @@
           <RouterLink to="/reservas" class="text-gray-200 p-1 hover:text-white font-medium">Reservas</RouterLink>
         </button>
       </div>
-      <button class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        <!-- aqui va el routerlink sin <a></a> -->
-        <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a> 
+      <form class="flex">
+
+      <!-- <button type="submit" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <RouterLink to="{ name: 'user', params: { username: 'erina' }}" class="text-gray-200 p-1 hover:text-blue-900 font-medium">IMG</RouterLink>
+      </button> -->
+
+      <button type="submit" formmethod="get" formaction="http://localhost:8000/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <p class="text-sm text-white group-hover:text-blue-900 p-2">Cerrar Sesión</p> 
       </button>
-      <button formmethod="get" formaction="http://localhost:8000/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        <!-- aqui va el routerlink sin <a></a> -->
-        <!-- <a href="#" class="text-sm text-white group-hover:text-blue-900 p-2"><RouterLink to="/#">USUARIO</RouterLink></a>  -->
-      </button>
+    </form>
     </div>
   </nav>
 
@@ -97,6 +99,7 @@
       .then(function (response) {
           console.log(response);
           user_store.yes_logged();
+          // user_store.current_user = response.data['username'];
       })
       .catch(function (error) {
           console.log(error);

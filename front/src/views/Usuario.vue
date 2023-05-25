@@ -1,9 +1,9 @@
 <script setup>
-import UsuarioComponente from '../components/Usuario_Componente.vue'
+import Usuario_Component from '../components/Usuario_Component.vue'
 </script>
 
 <template>
   <main>
-    <UsuarioComponente/>
+    <Usuario_Component/>
   </main>
 </template>
