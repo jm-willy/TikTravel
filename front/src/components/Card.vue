@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-xl px-3 py-4">
+    <div id="card" class="px-3 py-4">
 
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
 
@@ -7,26 +7,6 @@
                 <button type="submit" class="flex float-right">
                     <a href="#" class="text-sm bg-gray-700 hover:bg-gray-800 rounded-lg px-2 text-white p-1.5">Reservar</a>
                 </button>
-            </div>
-
-            <div class="flex p-4 justify-around">
-
-                <div>
-
-                    <div class="flex">
-                        <p class="uppercase text-sm font-bold text-gray-700 mr-2">Título</p>
-                    </div>
-                    
-                    <div class="flex items-center">
-                        <p class="text-3xl text-gray-900">Precio</p>
-                    </div>
-
-                </div>
-
-                <div class="flex items-center">
-                    <p>Descripción</p>
-                </div>
-                
             </div>
 
             <h3 id="text" class="border-t border-gray-300 text-center text-3xl p-1">Viaje</h3>
@@ -62,21 +42,15 @@
                     <input type="time" class="text-center block px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 appearance-none focus:outline-none">
                 </div>
 
-                <div class="bg-gray-200 flex flex-col w-32 p-3 rounded-xl border-2 border-white">
-                    <span class="font-semibold text-sm text-center">¿A dónde?</span>
-                    <select id="underline_select" class="text-center block px-0 w-full text-sm bg-transparent border-b-2  focus:outline-none">
-                        <option selected value="Option 3">Ubicación</option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 2">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                        <option value="Option 5">Option 5</option>
-                    </select>
-                </div>
-
             </div>
 
         </div>
 
     </div>
 </template>
+
+<style>
+#card{
+    width: 35rem;
+}
+</style>

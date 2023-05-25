@@ -14,7 +14,7 @@
 
         <div class="flex items-center min-h-screen">
 
-            <div class="text-center px-10">
+            <div class="text-center px-10 pl-28">
                 <h1 id="animacion"> <p id="text" class="show md:text-6xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
             </div>
 
