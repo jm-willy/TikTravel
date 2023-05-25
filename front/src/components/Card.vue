@@ -11,7 +11,7 @@
 
             <h3 id="text" class="border-t border-gray-300 text-center text-3xl p-1">Viaje</h3>
 
-            <div class="p-2  flex items-center justify-center">
+            <div class="p-2 flex items-center justify-around">
 
                 <div class="bg-gray-200 flex flex-col w-32 p-3 rounded-xl border-2 border-white">
                     <span class="font-semibold text-sm text-center">Estancia</span>
