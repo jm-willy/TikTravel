@@ -29,7 +29,7 @@
                 
             </div>
 
-            <h3 id="text" class="border-t border-gray-300 text-center text-3xl p-1">Vuelos</h3>
+            <h3 id="text" class="border-t border-gray-300 text-center text-3xl p-1">Viaje</h3>
 
             <div class="p-2  flex items-center justify-center">
 

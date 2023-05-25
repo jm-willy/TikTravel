@@ -18,7 +18,7 @@
                 <h1 id="animacion"> <p id="text" class="show md:text-6xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
             </div>
 
-            <section class='px-2 overflow-y-scroll max-h-[39rem]'>
+            <section class='px-2 overflow-y-scroll max-h-[39rem] fade-in'>
               <Card v-for="item in card_list" :key="item.id" />
             </section>
 
@@ -36,6 +36,38 @@
     background-size: cover;
     
   }
+
+  .fade-in {
+  opacity: 0;
+  animation: fade-in-animation 1s ease-in forwards;
+}
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+section {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+section::-webkit-scrollbar {
+  display: none; 
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+*{
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
 
   #animacion {
     animation: anim-lineUp 3s;
