@@ -1,7 +1,7 @@
 <template>
   <div id="fondo" class=" flex flex-col sm:justify-start sm:items-center min-h-screen bg-center">
     <div class="mt-2 mx-auto">
-        <h1 id="animacion"> <p id="text" class="show text-6xl md:text-9xl text-white">Bienvenido!</p></h1>
+        <h1 id="animacion"> <p id="text" class="show text-6xl md:text-9xl text-gray-800">Bienvenido!</p></h1>
         <!-- <h1 id="animacion" class="text-4xl justify-center flex text-white"><img src="../../assets/t.png" alt="logo" class="w-10"> <p id="text">Tik Travel</p></h1> -->
     </div>
 
@@ -23,7 +23,7 @@
             </h1>
           </div>
 
-          <div id="animacion2" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+          <div id="animacion2" class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
             <div class="flex">
               <img src="https://cdn1.iconfinder.com/data/icons/rcons-basic-work-and-office/16/internet_world_network_web_planet_earth_globe-512.png" class="mt-1 mr-2 w-6 h-6">
               <h3 class="mb-3 font-bold text-gray-800 text-xl">¡Descubre el mundo con nosotros!</h3>
@@ -50,7 +50,7 @@
             </h1>
           </div>
 
-          <div id="animacion3" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+          <div id="animacion3" class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
             <div class="flex">
               <img src="https://cdn3.iconfinder.com/data/icons/camping-icons/369/Compass-512.png" class="mt-1 mr-2 w-6 h-6">
               <h3 class="mb-3 font-bold text-gray-800 text-xl">¿Qué es lo que buscas?</h3>
@@ -76,7 +76,7 @@
             </h1>
           </div>
 
-          <div id="animacion2" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+          <div id="animacion2" class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
             <div class="flex">
               <img src="https://cdn1.iconfinder.com/data/icons/business-1508/32/Teamwork-512.png" class="mr-2 w-7 h-7">
               <h3 class="mb-3 font-bold text-gray-800 text-xl">Nuestro Equipo</h3>
@@ -102,7 +102,7 @@
             </h1>
           </div>
 
-          <div id="animacion3" class="order-1 bg-gray-300 rounded-lg shadow-xl w-5/12 px-6 py-4">
+          <div id="animacion3" class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4">
             <div class="flex">
               <img src="https://cdn0.iconfinder.com/data/icons/freebies-2/24/like-1-512.png" class="mr-2 w-6 h-6">
               <h3 class="mb-3 font-bold text-gray-800 text-xl">Garantizamos una experiencia inolvidable</h3>
@@ -127,7 +127,7 @@
 
 <style>
 #fondo {
-  background-image: url('../assets/f3.jpg');
+  background-image: url('../assets/f41.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
