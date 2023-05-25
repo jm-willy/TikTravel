@@ -82,58 +82,7 @@ methods: {
 </script>
 
 <template>
-      <div class="container mx-auto py-4">
-        <div class="flex justify-between items-center mb-4">
-          <div class="flex items-center">
-            <label for="search" class="mr-2">Buscar:</label>
-            <input type="text" id="search" v-model="searchText" class="py-1 px-2 border rounded-md">
-          </div>
-          <div>
-            <label for="perPage" class="mr-2">Resultados por página:</label>
-            <select id="perPage" v-model="perPage" class="py-1 px-6 border rounded-md">
-              <option v-for="option in perPageOptions" :key="option" :value="option">{{ option }}</option>
-            </select>
-          </div>
-        </div>
-        <table class="table-auto w-full border">
-          <thead class="bg-gray-300">
-            <tr>
-              <th v-for="column in columns" :key="column.key">{{ column.label }}</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in pagedData" :key="item.id">
-              <td v-for="column in columns" :key="column.key" class="text-center">{{ item[column.key] }}</td>
-              <td class="text-center space-x-2">
-                <button @click="editItem(item)" class="px-2 py-1 bg-blue-500 text-white rounded">Edit</button>
-                <button @click="deleteItem(item)" class="px-2 py-1 bg-red-500 text-white rounded">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="flex justify-between items-center mt-4">
-          <div>
-            <p class="text-sm text-gray-600">
-              Mostrando {{ firstIndex }} - {{ lastIndex }} de {{ filteredData.length }} resultados.
-            </p>
-          </div>
-          <div>
-            <button
-              :disabled="currentPage === 1"
-              @click="currentPage -= 1"
-              class="py-1 px-4 bg-gray-200 rounded-md mr-2"
-            >
-              Anterior
-            </button>
-            <button
-              :disabled="currentPage === pageCount"
-              @click="currentPage += 1"
-              class="py-1 px-4 bg-gray-200 rounded-md"
-            >
-              Siguiente
-            </button>
-          </div>
-        </div>
+      <div class="min-h-sreen">
+        AQUI SE INSERTARAN LAS TARJETAS QUE RESERVA EL USUARIO
       </div>
 </template>

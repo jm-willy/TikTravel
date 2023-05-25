@@ -55,9 +55,10 @@
 </script>
 
 <template>
-    <div class="py-12">
-        <div class="max-w-2xl mx-auto">
+    <div class="min-h-screen bg-gray-400">
+        <div class="max-w-2xl mx-auto pt-48">
             <div class="sm:p-8 bg-gray-200 sm:rounded-lg shadow-xl">
+                <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black">Configurar Información del Perfil</h1>
                 <form class="mt-8" x-data="{password: '',password_confirm: ''}">
                     <div class="mx-auto max-w-lg ">
                         <div class="py-1">
@@ -84,7 +85,7 @@
                         <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
                             <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
                             <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
-                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Enviar</span>
+                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
                             <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
                         </a>
                     </button>
