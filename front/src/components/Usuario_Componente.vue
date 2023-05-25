@@ -15,14 +15,13 @@
   });
 
   function get_profile_pic() {
-    axios_instance.get('api/profile-pic')
+    let data = {'current_user_page': window.location.pathname};
+    axios_instance.post('api/profile-pic', data=data)
       .then(function (response) {
           console.log(response);
       })
       .catch(function (error) {
           console.log(error);
-          ;
-
       })
       .finally(function () {
           console.log('self_page =', self_page, 0);
@@ -34,23 +33,21 @@
       .then(function (response) {
           console.log(response);
           if (('/user/'+response.data['username']+'/') == window.location.pathname) {
-            console.log(('/user/'+response.data['username']+'/'));
             self_page = true;
           } else {
-            console.log(('/user/'+response.data['username']+'/'));
             self_page = false;
           };
       })
       .catch(function (error) {
           console.log(error);
-          ;
 
       })
       .finally(function () {
-          console.log('self_page =', self_page);
+          console.log('self_page =', self_page, 1);
       });
   }
   page_data();
+  get_profile_pic();
   window.setInterval(page_data, 2*60*1000);
 </script>
 

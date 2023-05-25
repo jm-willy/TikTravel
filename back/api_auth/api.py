@@ -21,11 +21,11 @@ api = NinjaAPI(csrf=True, auth=django_auth, urls_namespace='api_auth')
 
 @api.get("/hi")
 def hello(request):
-    import logging
-    logging.warning(request.COOKIES)
+    # import logging
+    # logging.warning(request.COOKIES)
     # logging.warning(request.META)
-    logging.warning('********************************************')
-    return api.create_response(request, {'success': True, "message": "Hii, you're still logged in!"}, status=200)
+    # logging.warning('********************************************')
+    return api.create_response(request, {'success': True, "message": "Hii, you're still logged in!", 'username': request.user.username}, status=200)
 
 @api.get("/logout")
 def log_out(request):
@@ -50,7 +50,6 @@ def upload(request, pic_file: UploadedFile = File(...)): # atributo name del inp
 
 @api.post("/upload-profile-pic")
 def upload(request, pic_file: UploadedFile = File(...)): # atributo name del input tiene que ser igual a pic_file
-    # user = User.objects.get(pk=request.user.id)
     Picture.objects.update_or_create(user=request.user, pic=pic_file)
-    return '200 OK'
+    return api.create_response(request, {'success': True,}, status=200)
 
