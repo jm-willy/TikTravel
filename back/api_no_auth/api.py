@@ -73,22 +73,21 @@ class UserAtPage(Schema):
 #     # return {'pics_src': [i.url for i in pics]}
 
 @api.post('/profile-pic')
-def user_pic(request, data: UserAtPage):
+def user_profile_pic(request, data: UserAtPage):
     try:
         user = User.objects.get(username=data.current_user_page[6:-1])
         pic = ProfilePic.objects.get(user_id=user.id)
         pic = '/media/'+str(pic.pic)
         return api.create_response(request, {'success': True, "profile_pic_src": pic}, status=200)
     except User.DoesNotExist:
-        return api.create_response(request, {'success': False}, status=404)
+        return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404)
     
 
-@api.post('/user-pics')
-def user_pic(request, data: UserAtPage):
+@api.post('/userpage-pics')
+def userpage_pictures(request, data: UserAtPage):
     try:
         user = User.objects.get(username=data.current_user_page[6:-1])
-        pic = ProfilePic.objects.get(user_id=user.id)
-        pic = settings.MEDIA_ROOT+str(pic.pic)
-        return api.create_response(request, {'success': True, "pics_src": pic}, status=200)
+        pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=user.id)]
+        return api.create_response(request, {'success': True, "userpage_pics_srcs": pics}, status=200)
     except User.DoesNotExist:
-        return api.create_response(request, {'success': False}, status=404)
+        return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404)

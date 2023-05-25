@@ -59,21 +59,6 @@
   </nav>
 
 </template>
-
-<!-- <script setup>
-    import {computed} from "vue";
-    import {UserStatusStore} from '@/stores/user_status'
-    const user_store = UserStatusStore()
-    const logged = computed({
-      get() {
-        console.log(user_store.is_logged, 0)
-        return user_store.is_logged
-      },
-      // set(val) {
-      //   someReactiveRef.value = val
-      // }
-    })
-</script> -->
   
 <script setup>
   import {UserStatusStore} from '@/stores/user_status'

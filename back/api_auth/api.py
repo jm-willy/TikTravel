@@ -37,7 +37,21 @@ def sign(request, passw: int = Form(...)):
     user = request.user
     user.set_password(passw)
     user.save()
-    return '200 OK'
+    return api.create_response(request, {'success': True,}, status=200)
+
+@api.post("/change-email")
+def sign(request, email: str = Form(...)):
+    user = request.user
+    user.email = email
+    user.save()
+    return api.create_response(request, {'success': True,}, status=200)
+
+@api.post("/change-username")
+def sign(request, usern: str = Form(...)):
+    user = request.user
+    user.username = usern
+    user.save()
+    return api.create_response(request, {'success': True,}, status=200)
 
 from ninja import NinjaAPI, File
 from ninja.files import UploadedFile

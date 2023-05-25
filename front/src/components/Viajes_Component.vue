@@ -18,7 +18,7 @@
                 <h1 id="animacion"> <p id="text" class="show md:text-6xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
             </div>
 
-            <section class='px-2 overflow-y-scroll max-h-[39rem] fade-in'>
+            <section class='px-2 overflow-y-scroll max-h-[39rem]'>
               <Card v-for="item in card_list" :key="item.id" />
             </section>
 
