@@ -77,7 +77,7 @@ def user_pic(request, data: UserAtPage):
     try:
         user = User.objects.get(username=data.current_user_page[6:-1])
         pic = ProfilePic.objects.get(user_id=user.id)
-        pic = settings.MEDIA_ROOT+str(pic.pic)
+        pic = '/media/'+str(pic.pic)
         return api.create_response(request, {'success': True, "profile_pic_src": pic}, status=200)
     except User.DoesNotExist:
         return api.create_response(request, {'success': False}, status=404)

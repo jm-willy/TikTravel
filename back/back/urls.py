@@ -36,4 +36,5 @@ urlpatterns = [
     path("user/<str:username>/", vue_view.views.user_page),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # dev only, managed by django
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

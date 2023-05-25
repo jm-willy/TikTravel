@@ -27,9 +27,9 @@ VUE_DIR = os.path.join(VUE_DIR, 'front')
 SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['http://tiktravel.example']
+ALLOWED_HOSTS = ['localhost:8000', 'localhost']
 
 ########################
 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
