@@ -184,6 +184,6 @@
 }
 
 #text {
-  font-family: 'Lobster';
+  font-family: 'Sansita Swashed';
 }
 </style>
