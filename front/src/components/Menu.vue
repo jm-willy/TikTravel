@@ -4,8 +4,7 @@
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
         <img src="../assets/t.png" class="w-10 mr-2">
-        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight" id="text1">TikTravel</RouterLink>
-        <!-- <span class="font-semibold text-xl tracking-tight"><RouterLink to="/">TikTravel</RouterLink></span> -->
+        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight">TikTravel</RouterLink>
     </button>
 
     <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
