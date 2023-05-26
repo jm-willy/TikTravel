@@ -82,24 +82,126 @@
 </script>
 
 <template>
+    <div class="min-h-screen bg-gray-400">
     <div>
         <div v-if="user_found">
-            <h2>Foto perfil</h2>
-            <div>
-                <img :src="profile_pic_url" width="200" height="200">
-            </div>
-            <br>
-            <h2>Fotos usuario</h2>
-            <section class='px-13 overflow-y-scroll max-h-[39rem]'>
-                <img v-for="i in user_page_pics_urls" :src="i" class="py-3"/>
-            </section>
-            <br>
             <section v-if="self_page">
-                <form>Cambair contraseña</form>
-                <form>Subir fotos de pagina</form>
-                <form>Etc</form>
+                <div class="max-w-2xl mx-auto pt-4">
+                    <div class="sm:p-8 bg-gray-200 sm:rounded-lg shadow-xl">
+                        <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black">Configurar Información del Perfil</h1>
+                        <form class="mt-8" x-data="{password: '',password_confirm: ''}">
+                            <div class="mx-auto max-w-lg ">
+
+                                <div class="m-auto">
+                                    <div class="flex justify-center pb-2"><span class="text-base font-bold text-gray-600">Foto de perfil</span></div>
+                                    <img :src="profile_pic_url" class="m-auto object-cover w-20 h-20 rounded-full hover-image-1 flex-shrink-0">
+                                </div>
+
+                                <form action="">
+                                    <div class="py-1">
+                                        <span class="px-1 text-sm text-gray-600">Nombre</span>
+                                        <input placeholder="" type="text"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                    </div>
+
+                                    <button type="submit" class="flex justify-center m-auto pt-3">  
+                                        <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
+                                            <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                                            <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
+                                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                            <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
+                                        </a>
+                                    </button>
+                                </form>
+                                <form action="">
+                                    <div class="py-1">
+                                        <span class="px-1 text-sm text-gray-600">Correo electronico</span>
+                                        <input placeholder="" type="email"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                    </div>
+
+                                    <button type="submit" class="flex justify-center m-auto pt-3">  
+                                        <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
+                                            <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                                            <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
+                                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                            <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
+                                        </a>
+                                    </button>
+                                </form>
+                                <form action="">
+                                    <div class="py-1">
+                                        <span class="px-1 text-sm text-gray-600">Contraseña</span>
+                                        <input placeholder="" type="password" x-model="password"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                    </div>
+
+                                    <button type="submit" class="flex justify-center m-auto pt-3">  
+                                        <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
+                                            <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                                            <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
+                                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                            <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
+                                        </a>
+                                    </button>
+                                </form>
+                                <form action="">
+                                    <div class="py-1">
+                                        <span class="px-1 text-sm text-gray-600">Foto de perfil</span>
+                                        <input placeholder="" type="file"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                    </div>
+
+                                    <button type="submit" class="flex justify-center m-auto pt-3">  
+                                        <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
+                                            <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                                            <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
+                                            <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                            <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
+                                        </a>
+                                    </button>
+                                </form>
+
+                            </div>
+        
+                        </form>
+                    </div>
+                </div>
+        </section>
+
+            <br>
+            <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black p-4">Imagenes subidas</h1>
+            <section class='px-13 overflow-y-scroll max-h-[39rem]'>
+                <img v-for="i in user_page_pics_urls" :src="i" class="py-3 w-2/3 m-auto"/>
             </section>
+            <br>
         </div>
-        <div v-else>This user doesn't exist yet</div>
+
+        <div v-else class="flex justify-center min-h-screen items-center">
+            <h1> 
+                <p id="text" class="show text-2xl text-gray-800">This user doesn't exist yet</p>
+            </h1>
+        </div>
+
     </div>
+
+</div>
 </template>
+
+<style>
+::-webkit-scrollbar{
+    display: none;
+  }
+  
+  *{
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+  #text {
+    font-family: 'Sansita Swashed';
+  }
+</style>
