@@ -1,0 +1,1 @@
+web: cd back && python manage.py runserver
