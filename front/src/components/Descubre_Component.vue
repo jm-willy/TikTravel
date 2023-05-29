@@ -1,3 +1,39 @@
+<script setup>
+  var styles_list = [
+  "background-image: url('https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')",
+  "background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1280px-Bandera_de_Espa%C3%B1a.svg.png')",
+  "background-image: url('')",
+  "background-image: url('')",
+  "background-image: url('')",
+  ];
+
+  import axios from 'axios'
+  import {ApiHostStore} from '@/stores/api_hosts'
+  import { ref } from 'vue';
+  
+  const discover_pics = ref([])
+
+  const api_store = ApiHostStore()
+  const base_host = api_store.get_api_host
+  const axios_instance = axios.create({
+      baseURL: base_host,
+  });
+
+  function get_discover_pics() {
+      axios_instance.post('api/discover-pics')
+      .then(function (response) {
+        discover_pics.value = response.data['discover_pics_srcs'];
+      })
+      .catch(function (error) {
+          console.log(error);
+      })
+      .finally(function () {
+      // console.log();
+      });
+  }
+  // get_discover_pics();
+</script>
+
 <template>
   <div>
 

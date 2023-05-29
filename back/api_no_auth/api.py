@@ -87,7 +87,6 @@ def user_profile_pic(request, data: UserAtPage):
             return api.create_response(request, {'success': True, "profile_pic_src": pic}, status=200)
         except User.DoesNotExist:
             return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404)
-    
 
 @api.post('/userpage-pics')
 def userpage_pictures(request, data: UserAtPage):
@@ -96,4 +95,19 @@ def userpage_pictures(request, data: UserAtPage):
         pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=user.id)]
         return api.create_response(request, {'success': True, "userpage_pics_srcs": pics}, status=200)
     except User.DoesNotExist:
-        return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404)
+        return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404) 
+
+import random
+
+@api.post("/discover-pics")
+def get_discover(request): # atributo name del input tiene que ser igual a pic_file
+    pics = {}
+    users_queryset = User.objects.all()
+    random.shuffle(users_queryset)
+    for i in users_queryset:
+        profile_pic = ProfilePic.objects.get(user_id=i.id)
+        profile_pic = '/media/'+str(profile_pic.pic)
+        user_pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=i.id)]
+        random.shuffle(user_pics)
+        pics.update({profile_pic: user_pics[:4]})
+    return api.create_response(request, {'success': True, "discover_pics_srcs": pics}, status=200)
