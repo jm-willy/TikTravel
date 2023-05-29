@@ -21,9 +21,9 @@
       </div>
       <form class="flex">
 
-      <button type="submit" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        <RouterLink :to="profile_path" class="text-gray-200 p-1 hover:text-blue-900 font-medium">
-          <img :src="profile_pic_url" class="m-auto object-cover w-20 h-20 rounded-full hover-image-1 flex-shrink-0">
+      <button type="submit" class="flex items-center justify-items-center rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <RouterLink :to="profile_path">
+          <img :src="profile_pic_url" class="m-auto object-cover w-11 h-11 rounded-full hover-image-1 flex-shrink-0">
         </RouterLink>
       </button>
 
@@ -137,6 +137,9 @@
 </script>
 
 <style>
+#id{
+  font-family: 'Lobster';
+}
   .link-underline {
 		border-bottom-width: 0;
 		background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
