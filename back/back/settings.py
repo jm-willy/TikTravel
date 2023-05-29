@@ -170,7 +170,7 @@ if DEBUG:
     CORS_ALLOW_HEADERS = (*default_headers, 'csrftoken', 'sessionid', 'cookies', 'COOKIE', 'COOKIES', 'Cookie')
 else:
     REDIRECT_BASE = '' # https://tiktravel.herokuapp.com/
-    ALLOWED_HOSTS += ['*']
+    # ALLOWED_HOSTS += ['*']
 
 
 
