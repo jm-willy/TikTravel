@@ -1,11 +1,12 @@
 <script setup>
 import Card from '../components/Card.vue'
-var card_list = [Card, Card, Card, Card, Card];
-// data() {
-//   return {
-//     items: [{ message: 'Foo' }, { message: 'Bar' }]
-//   }
-// }
+var styles_list = [
+  "background-image: url('https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')",
+  "background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1280px-Bandera_de_Espa%C3%B1a.svg.png')",
+  "background-image: url('')",
+  "background-image: url('')",
+  "background-image: url('')",
+];
 </script>
 
 <template>
@@ -18,8 +19,8 @@ var card_list = [Card, Card, Card, Card, Card];
             <h1 id="animacion"> <p id="text" class="show md:text-6xl text-white">Descubre el mundo con nosotros <br> ¡ Tu aventura comienza aquí !</p></h1>
         </div>
 
-        <section class='px-2 overflow-y-scroll max-h-[39rem] fade-in'>
-          <Card v-for="item in card_list" :key="item.id" />
+        <section class='px-2 overflow-y-scroll max-h-[40rem] fade-in'>
+          <Card v-for="item in styles_list" :key="item.id" :bg_img_src="item"/>
         </section>
 
     </div>

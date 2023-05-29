@@ -67,3 +67,9 @@ def upload(request, pic_file: UploadedFile = File(...)): # atributo name del inp
     Picture.objects.update_or_create(user=request.user, pic=pic_file)
     return api.create_response(request, {'success': True,}, status=200)
 
+
+@api.post("/discover-pics")
+def upload(request, pic_file: UploadedFile = File(...)): # atributo name del input tiene que ser igual a pic_file
+    Picture.objects.update_or_create(user=request.user, pic=pic_file)
+    return api.create_response(request, {'success': True,}, status=200)
+
