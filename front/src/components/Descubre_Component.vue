@@ -1,7 +1,7 @@
 <script setup>
 import Card_Descubre from '../components/Card_Descubre.vue'
 import {UserStatusStore} from '@/stores/user_status'
-  
+
   const user_store = UserStatusStore()
 </script>
 
