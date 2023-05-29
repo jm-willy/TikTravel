@@ -4,8 +4,7 @@
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
         <img src="../assets/t.png" class="w-10 mr-2">
-        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight" id="text1">TikTravel</RouterLink>
-        <!-- <span class="font-semibold text-xl tracking-tight"><RouterLink to="/">TikTravel</RouterLink></span> -->
+        <RouterLink to="/" class=" link-underline link-underline-black text-2xl tracking-tight" id="text">TikTravel</RouterLink>
     </button>
 
     <div class="flex md:flex-grow items-center justify-items-center mx-auto my-1 md:my-auto">
@@ -22,9 +21,9 @@
       </div>
       <form class="flex">
 
-      <button type="submit" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        <RouterLink :to="profile_path" class="text-gray-200 p-1 hover:text-blue-900 font-medium">
-          <img :src="profile_pic_url" class="m-auto object-cover w-20 h-20 rounded-full hover-image-1 flex-shrink-0">
+      <button type="submit" class="flex items-center justify-items-center rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+        <RouterLink :to="profile_path">
+          <img :src="profile_pic_url" class="m-auto object-cover w-11 h-11 rounded-full hover-image-1 flex-shrink-0">
         </RouterLink>
       </button>
 
@@ -138,9 +137,9 @@
 </script>
 
 <style>
-#text1 {
-    font-family: 'Lobster';
-  }
+#id{
+  font-family: 'Lobster';
+}
   .link-underline {
 		border-bottom-width: 0;
 		background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);

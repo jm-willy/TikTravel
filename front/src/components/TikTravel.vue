@@ -1,7 +1,7 @@
 <template>
   <div id="fondo" class=" flex flex-col sm:justify-start sm:items-center min-h-screen bg-center">
     <div class="mt-2 mx-auto">
-        <h1 id="animacion"> <p id="text" class="show text-6xl md:text-9xl text-gray-800">Bienvenido!</p></h1>
+        <h1 id="animacion"> <p id="text1" class="show text-6xl md:text-9xl text-gray-800">Bienvenido!</p></h1>
         <!-- <h1 id="animacion" class="text-4xl justify-center flex text-white"><img src="../../assets/t.png" alt="logo" class="w-10"> <p id="text">Tik Travel</p></h1> -->
     </div>
 
@@ -184,6 +184,10 @@
 }
 
 #text {
+  font-family: 'Lobster';
+}
+
+#text1 {
   font-family: 'Sansita Swashed';
 }
 </style>

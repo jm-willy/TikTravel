@@ -1,42 +1,12 @@
 <script setup>
-  var styles_list = [
-  "background-image: url('https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')",
-  "background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1280px-Bandera_de_Espa%C3%B1a.svg.png')",
-  "background-image: url('')",
-  "background-image: url('')",
-  "background-image: url('')",
-  ];
+import Card_Descubre from '../components/Card_Descubre.vue'
+import {UserStatusStore} from '@/stores/user_status'
 
-  import axios from 'axios'
-  import {ApiHostStore} from '@/stores/api_hosts'
-  import { ref } from 'vue';
-  
-  const discover_pics = ref([])
-
-  const api_store = ApiHostStore()
-  const base_host = api_store.get_api_host
-  const axios_instance = axios.create({
-      baseURL: base_host,
-  });
-
-  function get_discover_pics() {
-      axios_instance.post('api/discover-pics')
-      .then(function (response) {
-        discover_pics.value = response.data['discover_pics_srcs'];
-      })
-      .catch(function (error) {
-          console.log(error);
-      })
-      .finally(function () {
-      // console.log();
-      });
-  }
-  // get_discover_pics();
+  const user_store = UserStatusStore()
 </script>
 
 <template>
   <div>
-
     <div class="flex justify-center p-3 bg-gray-200">
       <ul class="flex items-center flex-shrink-0 space-x-6">
         <!-- Profile menu -->
@@ -75,144 +45,39 @@
     </div>
 
     <div class="flex justify-center pt-10 pb-10">
-        <div class="bg-slate-800 text-white rounded-lg w-full mx-5 md:w-[40rem]  space-y-6 p-10">
-       <!-- header -->
-       <div class="flex space-x-4 items-center">
-         <div class="w-12 h-12">
-           <img
-               alt="avatar"
-               src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-               class="rounded-full w-full h-full object-cover ">
-           <div>
-           </div>
-         </div>
-         <div class="space-y-2">
-           <div class="flex space-x-2 items-center">
-             <h2 class="text-base"> John Doe</h2>
-             <svg class="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="2">
-               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-             </svg>
-           </div>
-           <p class=" text-xs text-slate-400">Fecha</p>
-         </div>
 
-       </div>
-       <!--content-->
-       <div>
-         <p class="text-sm leading-6 text-slate-300">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-           Aliquid, laudantium explicabo assumenda, animi facere aperiam ex facilis expedita ut fugit vero? 
-           Cum, alias? Iure accusantium dolor aliquam cupiditate nostrum quaerat!
-         </p>
-       </div>
-
-
-       <!-- image grid-->
-
-
-       <div class="grid grid-cols-6 col-span-2   gap-2  ">
-         <div class=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-           <img class="h-full w-full object-cover "
-                src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-                alt="">
-         </div>
-         <div class=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-           <img class="h-full w-full object-cover  "
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-                alt="">
-         </div>
-         <div class=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-           <img class="h-full w-full object-cover "
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                alt="">
-         </div>
-         <div class=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-           <img class="h-full w-full object-cover "
-                src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                alt="">
-         </div>
-         <div class="relative overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-           <div
-               class="text-white text-xl absolute inset-0  bg-slate-900/80 flex justify-center items-center">
-             + 23
-           </div>
-           <img class="h-full w-full object-cover "
-                src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
-                alt="">
-         </div>
-       </div>
-     </div>
-
-     <div class="bg-slate-800 text-white rounded-lg w-full mx-5 md:w-[40rem]  space-y-6 p-10">
-        <!-- header -->
-        <div class="flex space-x-4 items-center ">
-          <div class="w-12 h-12"
-          >
-            <img
-                alt="avatar"
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                class="rounded-full w-full h-full object-cover ">
-            <div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex space-x-2 items-center">
-              <h2 class="text-base"> John Doe</h2>
-              <svg class="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <p class=" text-xs text-slate-400">Fecha</p>
-          </div>
-
-        </div>
-        <!--content-->
-        <div>
-          <p class="text-sm leading-6 text-slate-300">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Aliquid, laudantium explicabo assumenda, animi facere aperiam ex facilis expedita ut fugit vero? 
-            Cum, alias? Iure accusantium dolor aliquam cupiditate nostrum quaerat!
-          </p>
-        </div>
-
-
-        <!-- image grid-->
-
-
-        <div class="grid grid-cols-6 col-span-2   gap-2  ">
-          <div class=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-            <img class="h-full w-full object-cover "
-                 src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-                 alt="">
-          </div>
-          <div class=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-            <img class="h-full w-full object-cover  "
-                 src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-                 alt="">
-          </div>
-          <div class=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-            <img class="h-full w-full object-cover "
-                 src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                 alt="">
-          </div>
-          <div class=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-            <img class="h-full w-full object-cover "
-                 src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                 alt="">
-          </div>
-          <div class="relative overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-            <div
-                class="text-white text-xl absolute inset-0  bg-slate-900/80 flex justify-center items-center">
-              + 23
-            </div>
-            <img class="h-full w-full object-cover "
-                 src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
-                 alt="">
-          </div>
-        </div>
-      </div>
+      <Card_Descubre/>
+     
     </div>
+
+    <div class="w-full" v-if="user_store.is_logged">
+              <div class="mx-auto pt-3 pb-3">
+                  <div class="sm:p-8 bg-gray-200 sm:rounded-lg shadow-xl">
+                      <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black">Publicar Imagenes</h1>
+                      <form class="mt-8" x-data="{password: '',password_confirm: ''}">
+                          <div class="mx-auto max-w-lg ">
+                              <form action="">
+                                  <div class="py-1">
+                                      <span class="px-1 text-sm text-gray-600">Imagen</span>
+                                      <input placeholder="" type="file"
+                                          class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                  </div>
+
+                                  <button type="submit" class="flex justify-center m-auto pt-3">  
+                                      <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
+                                          <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                                          <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
+                                          <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                          <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
+                                      </a>
+                                  </button>
+                              </form>
+
+                          </div>
+      
+                      </form>
+                  </div>
+              </div>
+      </div>
   </div>
 </template>
