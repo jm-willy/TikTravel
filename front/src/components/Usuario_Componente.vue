@@ -101,8 +101,7 @@
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Nombre</span>
                                         <input placeholder="" type="text"
-                                            class="text-md block px-3 py-2 rounded-lg w-full
-                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                            class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 
                                     <button type="submit" class="flex justify-center m-auto pt-3">  
@@ -118,8 +117,7 @@
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Correo electronico</span>
                                         <input placeholder="" type="email"
-                                            class="text-md block px-3 py-2 rounded-lg w-full
-                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                            class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 
                                     <button type="submit" class="flex justify-center m-auto pt-3">  
@@ -152,8 +150,7 @@
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Foto de perfil</span>
                                         <input placeholder="" type="file"
-                                            class="text-md block px-3 py-2 rounded-lg w-full
-                                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                            class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 
                                     <button type="submit" class="flex justify-center m-auto pt-3">  
@@ -175,7 +172,7 @@
 
             <br>
             <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black p-4">Imagenes subidas</h1>
-            <section class='px-13 overflow-y-scroll max-h-[39rem]'>
+            <section class='px-13 overflow-y-scroll max-h-[40rem]'>
                 <img v-for="i in user_page_pics_urls" :src="i" class="py-3 w-2/3 m-auto"/>
             </section>
             <br>

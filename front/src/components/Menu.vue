@@ -22,7 +22,9 @@
       <form class="flex">
 
       <button type="submit" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
-        <RouterLink to="{ name: 'user', params: { username: 'erina' }}" class="text-gray-200 p-1 hover:text-blue-900 font-medium">IMG</RouterLink>
+        <RouterLink :to="profile_path" class="text-gray-200 p-1 hover:text-blue-900 font-medium">
+          <img :src="profile_pic_url" class="m-auto object-cover w-20 h-20 rounded-full hover-image-1 flex-shrink-0">
+        </RouterLink>
       </button>
 
       <button type="submit" formmethod="get" formaction="http://localhost:8000/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
@@ -77,17 +79,36 @@
 </script> -->
   
 <script setup>
+  import { ref } from 'vue';
   import {UserStatusStore} from '@/stores/user_status'
-  const user_store = UserStatusStore();
   import axios from 'axios'
   import {ApiHostStore} from '@/stores/api_hosts'
-
+  
+  const user_store = UserStatusStore()
+  const usern = ref('')
   const api_store = ApiHostStore()
   const base_host = api_store.get_api_host
   const axios_instance = axios.create({
     baseURL: base_host,
     // headers: {'HTTP_CSFRTOKEN': ''},
   });
+  
+  const profile_pic_url = ref('')
+  const profile_path = ref('')
+  function get_profile_pic() {
+        let data = {'current_user_page': window.location.pathname};
+        axios_instance.post('api/profile-pic', data=data)
+            .then(function (response) {
+                console.log(response);
+                profile_pic_url.value = response.data['profile_pic_src'];
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .finally(function () {
+            // console.log('profile_pic_url =', profile_pic_url.value);
+        });
+    }
 
   function api_login_status() {
       // let header = {'csfrtoken': document.cookie};
@@ -98,7 +119,8 @@
       .then(function (response) {
           console.log(response);
           user_store.yes_logged();
-          // user_store.current_user = response.data['username'];
+          usern.value = response.data['username'];
+          profile_path.value = { name: 'user', params: { username: (response.data['username']) }};
       })
       .catch(function (error) {
           console.log(error);
@@ -111,6 +133,7 @@
   }
   api_login_status();
   window.setInterval(api_login_status, 2*60*1000);
+  get_profile_pic();
 </script>
 
 <style>

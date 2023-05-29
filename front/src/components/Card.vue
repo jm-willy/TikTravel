@@ -3,7 +3,7 @@
 
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
 
-            <div class="bg-cover bg-center h-56 p-4" style="background-image: url(https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+            <div class="bg-cover bg-center h-56 p-4" :style=bg_img_src>
                 <button type="submit" class="flex float-right">
                     <a href="#" class="text-sm bg-gray-700 hover:bg-gray-800 rounded-lg px-2 text-white p-1.5">Reservar</a>
                 </button>
@@ -54,3 +54,12 @@
     width: 35rem;
 }
 </style>
+
+<script setup>
+import { defineProps } from "vue";
+const props = defineProps({
+  bg_img_src: '',
+})
+
+
+</script>
