@@ -132,12 +132,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
 # django buscara para recoger estaticos aqui:
 STATICFILES_DIRS = (
     os.path.join(VUE_DIR, 'dist/assets/'), # vue output dir for statics, including public/assets,in index: href="/assets/favicon.ico"
@@ -161,6 +155,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url en la que se sirven las imagenes
 MEDIA_URL = 'media/'
+
+if not DEBUG:
+    WHITENOISE_USE_FINDERS = True
+    # WHITENOISE_ROOT = MEDIA_ROOT
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # debug only settings
 if DEBUG:
