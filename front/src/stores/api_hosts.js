@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 
 export const ApiHostStore = defineStore('debug status', {
-    state: () => ({ dev_host: 'http://localhost:5173', debug_host: ['http://localhost:8000', 'http://127.0.0.1:8000'], production_host: 'https://tiktravel.herokuapp.com/'}),
+    state: () => ({ dev_host: 'http://localhost:5173', debug_host: ['http://localhost:8000', 'http://127.0.0.1:8000'], production_host: 'https://tiktravel.herokuapp.com'}),
     getters: {
       get_api_host(state) {
         if (state.debug_host.includes(window.location.origin)) {
