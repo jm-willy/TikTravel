@@ -2,14 +2,19 @@
     import axios from 'axios'
     import {ApiHostStore} from '@/stores/api_hosts'
     import { ref } from 'vue';
-
+    
+    const api_store = ApiHostStore()
+    
+    const change_password_action = api_store.get_api_host + '/api-auth/change-password"'
+    const change_mail_action = api_store.get_api_host + '/api-auth/change-email'
+    const change_username_action = api_store.get_api_host + '/api-auth/change-username'
+    const upload_pic_action = api_store.get_api_host + '/api-auth/upload-profile-pic'
     
     const self_page = ref(false)
     const profile_pic_url = ref('')
     const user_page_pics_urls = ref([])
     const user_found = ref('')
     
-    const api_store = ApiHostStore()
     const base_host = api_store.get_api_host
     const axios_instance = axios.create({
         baseURL: base_host,
@@ -18,21 +23,21 @@
     function get_profile_pic() {
         let data = {'current_user_page': window.location.pathname};
         axios_instance.post('api/profile-pic', data=data)
-            .then(function (response) {
-                console.log(response);
-                profile_pic_url.value = response.data['profile_pic_src'];
-                if (response.data['message'] == 'User does not exist') {
-                    user_found.value = false;
-                } else {
-                    user_found.value = true;
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
+        .then(function (response) {
+            console.log(response);
+            profile_pic_url.value = response.data['profile_pic_src'];
+            if (response.data['message'] == 'User does not exist') {
                 user_found.value = false;
-            })
-            .finally(function () {
-            // console.log('profile_pic_url =', profile_pic_url.value);
+            } else {
+                user_found.value = true;
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+            user_found.value = false;
+        })
+        .finally(function () {
+        // console.log('profile_pic_url =', profile_pic_url.value);
         });
     }
     
@@ -40,20 +45,20 @@
         let data = {'current_user_page': window.location.pathname};
         axios_instance.post('api/userpage-pics', data=data)
         .then(function (response) {
-            user_page_pics_urls.value = response.data['userpage_pics_srcs'];
-            if (response.data['message'] == 'User does not exist') {
-                user_found.value = false;
-            } else {
-                user_found.value = true;
-            }
-            })
-            .catch(function (error) {
-                console.log(error);
-                user_found.value = false;
-            })
-            .finally(function () {
-            // console.log();
-            });
+        user_page_pics_urls.value = response.data['userpage_pics_srcs'];
+        if (response.data['message'] == 'User does not exist') {
+            user_found.value = false;
+        } else {
+            user_found.value = true;
+        }
+        })
+        .catch(function (error) {
+            console.log(error);
+            user_found.value = false;
+        })
+        .finally(function () {
+        // console.log();
+        });
     }
     
     function is_self_page() {
@@ -97,7 +102,7 @@
                                     <img :src="profile_pic_url" class="m-auto object-cover w-20 h-20 rounded-full hover-image-1 flex-shrink-0">
                                 </div>
 
-                                <form action="">
+                                <form :action="change_username_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Nombre</span>
                                         <input placeholder="" type="text"
@@ -113,7 +118,7 @@
                                         </a>
                                     </button>
                                 </form>
-                                <form action="">
+                                <form :action="change_mail_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Correo electronico</span>
                                         <input placeholder="" type="email"
@@ -129,7 +134,7 @@
                                         </a>
                                     </button>
                                 </form>
-                                <form action="">
+                                <form :action="change_password_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Contraseña</span>
                                         <input placeholder="" type="password" x-model="password"
@@ -146,7 +151,7 @@
                                         </a>
                                     </button>
                                 </form>
-                                <form action="">
+                                <form :action="upload_pic_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Foto de perfil</span>
                                         <input placeholder="" type="file"
