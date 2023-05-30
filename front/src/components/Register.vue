@@ -1,5 +1,5 @@
 <template>
-    <form method="post" action="http://localhost:8000/api/sign">
+    <form method="post" action="https://tiktravel.herokuapp.com/register">
         <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
 
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">

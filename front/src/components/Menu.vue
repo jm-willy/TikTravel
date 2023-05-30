@@ -1,5 +1,5 @@
 <template>
-  <!-- Nav no inicio sesión -->
+  <!-- Nav inicio sesión -->
   <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-if="user_store.is_logged">
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
@@ -27,13 +27,13 @@
         </RouterLink>
       </button>
 
-      <button type="submit" formmethod="get" formaction="http://localhost:8000/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+      <button type="submit" formmethod="get" formaction="https://tiktravel.herokuapp.com/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
         <p class="text-sm text-white group-hover:text-blue-900 p-2">Cerrar Sesión</p> 
       </button>
     </form>
     </div>
   </nav>
-
+  <!-- Nav no inicio sesión -->
   <nav class="md:flex md:flex-grow items-center justify-items-center bg-blue-900 md:px-5 py-2 sticky top-0 z-50" v-else>
 
     <button class="flex items-center text-white p-1 px-2 md:ml-12 rounded-full mx-auto my-1 md:my-auto">
