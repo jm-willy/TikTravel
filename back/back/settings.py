@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 os.environ['DEBUG'] = 'False'
-DEBUG = os.environ['DEBUG']
+DEBUG = False
 
 ALLOWED_HOSTS = ['tiktravel.herokuapp.com']
 
