@@ -28,7 +28,13 @@ SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 os.environ['DEBUG'] = 'False'
-DEBUG = False
+
+if os.environ['DEBUG'] == 'False':
+    DEBUG = False
+elif os.environ['DEBUG'] == 'True':
+    DEBUG = True
+else:
+    raise ValueError("os.environ['DEBUG'] must be strings 'True' or 'False'")
 
 ALLOWED_HOSTS = ['tiktravel.herokuapp.com']
 
@@ -125,6 +131,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # django buscara para recoger estaticos aqui:
 STATICFILES_DIRS = (
