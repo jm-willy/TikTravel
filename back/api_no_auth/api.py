@@ -14,6 +14,7 @@ from back.settings import REDIRECT_BASE
 from django.shortcuts import redirect
 from django.db.utils import IntegrityError
 from back import settings
+from django.core.exceptions import ObjectDoesNotExist
 
 api = NinjaAPI(csrf=False)
 session = SessionStore()
@@ -101,13 +102,16 @@ import random
 
 @api.post("/discover-pics")
 def get_discover(request): # atributo name del input tiene que ser igual a pic_file
-    pics = {}
+    data = []
     users_queryset = User.objects.all()
-    random.shuffle(users_queryset)
+    # random.shuffle(users_queryset)
     for i in users_queryset:
-        profile_pic = ProfilePic.objects.get(user_id=i.id)
-        profile_pic = '/media/'+str(profile_pic.pic)
-        user_pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=i.id)]
-        random.shuffle(user_pics)
-        pics.update({profile_pic: user_pics[:4]})
-    return api.create_response(request, {'success': True, "discover_pics_srcs": pics}, status=200)
+        try:
+            profile_pic = ProfilePic.objects.get(user_id=i.id)
+            profile_pic = '/media/'+str(profile_pic.pic)
+            user_pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=i.id)]
+            random.shuffle(user_pics)
+            data.append({'user_pics': user_pics[:7], 'username': i.username, 'profile_pic': profile_pic})
+        except ObjectDoesNotExist:
+            continue
+    return api.create_response(request, {'success': True, "discover_data": data}, status=200)

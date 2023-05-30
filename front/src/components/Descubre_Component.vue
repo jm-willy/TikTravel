@@ -1,8 +1,33 @@
 <script setup>
-import Card_Descubre from '../components/Card_Descubre.vue'
-import {UserStatusStore} from '@/stores/user_status'
-
+  import Card_Descubre from '../components/Card_Descubre.vue'
+  import {UserStatusStore} from '@/stores/user_status'
+  import {ApiHostStore} from '@/stores/api_hosts'
+  import axios from 'axios'
+  import { ref } from 'vue';
+  
+  const api_store = ApiHostStore()
   const user_store = UserStatusStore()
+  const upload_pic_action = api_store.get_api_host + '/api-auth/upload-pics'
+  const discover_data = ref([])
+
+  const base_host = api_store.get_api_host
+  const axios_instance = axios.create({
+      baseURL: base_host,
+  });
+
+  function get_discover() {
+    axios_instance.post('api/discover-pics')
+    .then(function (response) {
+    discover_data.value = response.data['discover_data'];
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+    .finally(function () {
+    // console.log();
+    });
+  }
+  get_discover();
 </script>
 
 <template>
@@ -46,7 +71,7 @@ import {UserStatusStore} from '@/stores/user_status'
 
     <div class="flex justify-center pt-10 pb-10">
 
-      <Card_Descubre/>
+      <Card_Descubre v-for="i in discover_data" :key="i.id" :profile_img_src="i['profile_pic']" :username="i['username']" :user_imgs_srcs="i['user_pics']"/>
      
     </div>
 
@@ -56,7 +81,7 @@ import {UserStatusStore} from '@/stores/user_status'
                       <h1 class="uppercase font-extrabold text-2xl text-center border-b-2 border-black">Publicar Imagenes</h1>
                       <form class="mt-8" x-data="{password: '',password_confirm: ''}">
                           <div class="mx-auto max-w-lg ">
-                              <form action="">
+                              <form :action="upload_pic_action" method="post">
                                   <div class="py-1">
                                       <span class="px-1 text-sm text-gray-600">Imagen</span>
                                       <input placeholder="" type="file"

@@ -1,7 +1,7 @@
 <template>
     <footer class=" w-full bg-blue-900 body-font opacity-90 border-t border-blue-800">
         <div
-            class="container flex flex-col flex-wrap px-5 py-10 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
+            class="container flex flex-col flex-wrap px-5 py-7 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
             <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
                 <a class="flex items-center justify-center font-medium text-white title-font md:justify-start">
                    <p id="text" class="flex text-3xl"><img src="../assets/t.png" alt="logo" class="w-9 mr-3">Tik Travel</p>
