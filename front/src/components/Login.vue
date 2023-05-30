@@ -92,8 +92,7 @@
     import {UserStatusStore} from '@/stores/user_status'
 
     const api_store = ApiHostStore()
-    // const login_action = api_store.get_api_host + '/api/log'
-    const login_action = 'api/log'
+    const login_action = api_store.get_api_host + '/api/log'
 
     const user_store = UserStatusStore();
     if (user_store.is_logged) {
