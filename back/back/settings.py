@@ -158,13 +158,13 @@ MEDIA_URL = 'media/'
 
 if not DEBUG:
     WHITENOISE_USE_FINDERS = True
+    MEDIA_URL = ALLOWED_HOSTS[0] + '/' + MEDIA_URL
     WHITENOISE_ROOT = MEDIA_ROOT
-
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 
 # debug only settings
 if DEBUG:
