@@ -158,7 +158,7 @@ MEDIA_URL = 'media/'
 
 if not DEBUG:
     WHITENOISE_USE_FINDERS = True
-    # WHITENOISE_ROOT = MEDIA_ROOT
+    WHITENOISE_ROOT = MEDIA_ROOT
 
 STORAGES = {
     "staticfiles": {
