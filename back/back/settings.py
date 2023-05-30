@@ -161,6 +161,9 @@ if not DEBUG:
     MEDIA_URL = ALLOWED_HOSTS[0] + '/' + MEDIA_URL
     WHITENOISE_ROOT = MEDIA_ROOT
     STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
         "staticfiles": {
             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
         },
