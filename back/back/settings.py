@@ -154,7 +154,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url en la que se sirven las imagenes
-MEDIA_URL = 'media/'
+if DEBUG:
+    MEDIA_URL = 'media/'
+else:
+    MEDIA_URL = ''
 
 # if not DEBUG:
 #     WHITENOISE_USE_FINDERS = True
