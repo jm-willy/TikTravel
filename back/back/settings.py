@@ -135,6 +135,7 @@ USE_TZ = True
 # django buscara para recoger estaticos aqui:
 STATICFILES_DIRS = (
     os.path.join(VUE_DIR, 'dist/assets/'), # vue output dir for statics, including public/assets,in index: href="/assets/favicon.ico"
+    os.path.join(BASE_DIR, 'media/'),
 )
 
 # en produccion los estaticos tienen que estaran recogidos aqui:
@@ -168,8 +169,6 @@ MEDIA_URL = 'media/'
 #             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
 #         },
 #     }
-
-# CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 
 # debug only settings
 if DEBUG:
