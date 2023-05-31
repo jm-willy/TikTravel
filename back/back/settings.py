@@ -154,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url en la que se sirven las imagenes
-MEDIA_URL = 'assets/'
+MEDIA_URL = 'media/'
 
 # if not DEBUG:
 #     WHITENOISE_USE_FINDERS = True
@@ -168,6 +168,8 @@ MEDIA_URL = 'assets/'
 #             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
 #         },
 #     }
+
+# CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 
 # debug only settings
 if DEBUG:

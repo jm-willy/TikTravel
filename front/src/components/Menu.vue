@@ -144,6 +144,7 @@
   // if (user_store.is_logged) {
   //   get_profile_pic();
   // }
+  
 </script>
 
 <style>

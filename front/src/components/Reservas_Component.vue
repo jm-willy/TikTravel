@@ -3,7 +3,7 @@
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore();
     if (!(user_store.is_logged)) {
-    window.location.replace(window.location['origin']+'/login');
+      window.location.replace(window.location['origin']+'/login');
     }
     var styles_list = [
       "background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg')",

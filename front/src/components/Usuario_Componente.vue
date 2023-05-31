@@ -5,7 +5,7 @@
     
     const api_store = ApiHostStore()
     
-    const change_password_action = api_store.get_api_host + '/api-auth/change-password"'
+    const change_password_action = api_store.get_api_host + '/api-auth/change-password'
     const change_mail_action = api_store.get_api_host + '/api-auth/change-email'
     const change_username_action = api_store.get_api_host + '/api-auth/change-username'
     const upload_pic_action = api_store.get_api_host + '/api-auth/upload-profile-pic'
@@ -23,6 +23,25 @@
     const axios_instance = axios.create({
         baseURL: base_host,
     });
+
+    const csrf_token_form = ref('')
+    function get_token() {
+        axios_instance.get('api-auth/x-csrf-token')
+        .then(function (response) {
+            console.log(response);
+            console.log(response.headers);
+            console.log(response.headers['x-csrftoken']);
+            csrf_token_form.value = response.headers['x-csrftoken'];
+        })
+        .catch(function (error) {
+            console.log(error);
+
+        })
+        .finally(function () {
+            // console.log('self_page =', self_page.value);
+        });
+    }
+    get_token();
     
     function get_profile_pic() {
         let data = {'current_user_page': window.location.pathname};
@@ -41,7 +60,7 @@
             user_found.value = false;
         })
         .finally(function () {
-        // console.log('profile_pic_url =', profile_pic_url.value);
+        // console.log();
         });
     }
     
@@ -61,7 +80,7 @@
             user_found.value = false;
         })
         .finally(function () {
-        // console.log();
+            // console.log();
         });
     }
     
@@ -109,7 +128,8 @@
                                 <form :action="change_username_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Nombre</span>
-                                        <input placeholder="" type="text"
+                                        <input type="hidden" name="csrfmiddlewaretoken" :value="csrf_token_form">
+                                        <input required placeholder="" type="text" name="usern"
                                             class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 
@@ -125,7 +145,8 @@
                                 <form :action="change_mail_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Correo electronico</span>
-                                        <input placeholder="" type="email"
+                                        <input type="hidden" name="csrfmiddlewaretoken" :value="csrf_token_form">
+                                        <input required placeholder="" type="email" name="email"
                                             class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 
@@ -141,7 +162,8 @@
                                 <form :action="change_password_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Contraseña</span>
-                                        <input placeholder="" type="password" x-model="password"
+                                        <input type="hidden" name="csrfmiddlewaretoken" :value="csrf_token_form">
+                                        <input required placeholder="" type="password" x-model="password" name="passw"
                                             class="text-md block px-3 py-2 rounded-lg w-full
                                 bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
@@ -158,7 +180,8 @@
                                 <form :action="upload_pic_action" method="post">
                                     <div class="py-1">
                                         <span class="px-1 text-sm text-gray-600">Foto de perfil</span>
-                                        <input placeholder="" type="file"
+                                        <input type="hidden" name="csrfmiddlewaretoken" :value="csrf_token_form">
+                                        <input required placeholder="" type="file" name="profile_pic_file"
                                             class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                     </div>
 

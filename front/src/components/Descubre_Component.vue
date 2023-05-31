@@ -19,6 +19,25 @@
   const axios_instance = axios.create({
       baseURL: base_host,
   });
+  
+  const csrf_token_form = ref('')
+    function get_token() {
+      axios_instance.get('api-auth/x-csrf-token')
+      .then(function (response) {
+          console.log(response);
+          console.log(response.headers);
+          console.log(response.headers['x-csrftoken']);
+          csrf_token_form.value = response.headers['x-csrftoken'];
+      })
+      .catch(function (error) {
+          console.log(error);
+
+      })
+      .finally(function () {
+          // console.log();
+      });
+  }
+  get_token();
 
   function get_discover() {
     axios_instance.post('api/discover-pics')
@@ -89,6 +108,7 @@
                               <form :action="upload_pic_action" method="post">
                                   <div class="py-1">
                                       <span class="px-1 text-sm text-gray-600">Imagen</span>
+                                      <input type="hidden" name="csrfmiddlewaretoken" :value="csrf_token_form">
                                       <input placeholder="" type="file"
                                           class="text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                                   </div>

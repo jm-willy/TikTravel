@@ -66,5 +66,4 @@ const props = defineProps({
     bg_img_src: '',
 })
 
-
 </script>
