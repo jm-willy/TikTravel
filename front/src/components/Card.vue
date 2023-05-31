@@ -58,7 +58,7 @@
 <script setup>
 import { defineProps } from "vue";
 const props = defineProps({
-  bg_img_src: '',
+    bg_img_src: '',
 })
 
 

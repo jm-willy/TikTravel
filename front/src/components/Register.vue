@@ -1,5 +1,19 @@
+<script setup>
+    import {ApiHostStore} from '@/stores/api_hosts'
+    import {UserStatusStore} from '@/stores/user_status'
+
+    const api_store = ApiHostStore()
+    const sign_action = api_store.get_api_host + '/api/sign'
+
+    const user_store = UserStatusStore();
+    if (user_store.is_logged) {
+        window.location.replace(window.location['origin']+'/');
+    }
+</script>
+
+
 <template>
-    <form method="post" action="https://tiktravel.herokuapp.com/register">
+    <form method="post" :action="sign_action">
         <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
 
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">

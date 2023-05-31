@@ -27,9 +27,16 @@ VUE_DIR = os.path.join(VUE_DIR, 'front')
 SECRET_KEY = 'django-insecure-t0ov=_q4)4xrf!r**_w09igw3quu_+f@=lq*uu+6v3*+o^k3(&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+os.environ['DEBUG'] = 'False'
 
-ALLOWED_HOSTS = ['localhost:8100', 'localhost']
+if os.environ['DEBUG'] == 'False':
+    DEBUG = False
+elif os.environ['DEBUG'] == 'True':
+    DEBUG = True
+else:
+    raise ValueError("os.environ['DEBUG'] must be strings 'True' or 'False'")
+
+ALLOWED_HOSTS = ['tiktravel.herokuapp.com']
 
 ########################
 
@@ -149,6 +156,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # url en la que se sirven las imagenes
 MEDIA_URL = 'media/'
 
+# if not DEBUG:
+#     WHITENOISE_USE_FINDERS = True
+#     # MEDIA_URL = ALLOWED_HOSTS[0] + '/' + MEDIA_URL
+#     WHITENOISE_ROOT = MEDIA_ROOT
+#     STORAGES = {
+#         "default": {
+#             "BACKEND": "django.core.files.storage.FileSystemStorage",
+#         },
+#         "staticfiles": {
+#             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#         },
+#     }
+
 # debug only settings
 if DEBUG:
     import logging
@@ -169,4 +189,4 @@ if DEBUG:
     CORS_ALLOW_CREDENTIALS = True
     CORS_ALLOW_HEADERS = (*default_headers, 'csrftoken', 'sessionid', 'cookies', 'COOKIE', 'COOKIES', 'Cookie')
 else:
-    REDIRECT_BASE = ''
+    REDIRECT_BASE = 'https://tiktravel.herokuapp.com/' # https://tiktravel.herokuapp.com/, ''

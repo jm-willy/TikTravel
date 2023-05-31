@@ -27,7 +27,7 @@
         </RouterLink>
       </button>
 
-      <button type="submit" formmethod="get" formaction="https://tiktravel.herokuapp.com/api-auth/logout" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
+      <button type="submit" formmethod="get" :formaction="logout_action" class="flex items-center justify-items-center border border-white hover:bg-white rounded-lg md:mr-3 px-1 mx-auto my-2 md:my-auto group">
         <p class="text-sm text-white group-hover:text-blue-900 p-2">Cerrar Sesión</p> 
       </button>
     </form>
@@ -84,9 +84,11 @@
   import axios from 'axios'
   import {ApiHostStore} from '@/stores/api_hosts'
   
-  const user_store = UserStatusStore()
-  const usern = ref('')
   const api_store = ApiHostStore()
+  const user_store = UserStatusStore()
+
+  const logout_action = api_store.get_api_host + '/api-auth/logout'
+  const usern = ref('')
   const base_host = api_store.get_api_host
   const axios_instance = axios.create({
     baseURL: base_host,
@@ -98,17 +100,17 @@
   function get_profile_pic() {
         let data = {'current_user_page': window.location.pathname};
         axios_instance.post('api/profile-pic', data=data)
-            .then(function (response) {
-                console.log(response);
-                profile_pic_url.value = response.data['profile_pic_src'];
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-            .finally(function () {
-            // console.log('profile_pic_url =', profile_pic_url.value);
-        });
-    }
+        .then(function (response) {
+            console.log(response);
+            profile_pic_url.value = response.data['profile_pic_src'];
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+          // console.log('profile_pic_url =', profile_pic_url.value);
+      });
+  }
 
   function api_login_status() {
       // let header = {'csfrtoken': document.cookie};
@@ -121,6 +123,7 @@
           user_store.yes_logged();
           usern.value = response.data['username'];
           profile_path.value = { name: 'user', params: { username: (response.data['username']) }};
+          // get_profile_pic();
       })
       .catch(function (error) {
           console.log(error);
@@ -134,6 +137,9 @@
   api_login_status();
   window.setInterval(api_login_status, 2*60*1000);
   get_profile_pic();
+  // if (user_store.is_logged) {
+  //   get_profile_pic();
+  // }
 </script>
 
 <style>
