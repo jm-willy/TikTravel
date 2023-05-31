@@ -180,11 +180,3 @@ else:
     REDIRECT_BASE = 'https://tiktravel.herokuapp.com/' # https://tiktravel.herokuapp.com/, ''
     WHITENOISE_USE_FINDERS = True
     WHITENOISE_ROOT = MEDIA_ROOT
-    # STORAGES = {
-    #     "default": {
-    #         "BACKEND": "django.core.files.storage.FileSystemStorage",
-    #     },
-    #     "staticfiles": {
-    #         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    #     },
-    # }
