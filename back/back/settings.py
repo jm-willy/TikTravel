@@ -128,6 +128,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Media
+
+# almacen de imagenes
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# url en la que se sirven las imagenes
+MEDIA_URL = 'media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -135,7 +142,7 @@ USE_TZ = True
 # django buscara para recoger estaticos aqui:
 STATICFILES_DIRS = (
     os.path.join(VUE_DIR, 'dist/assets/'), # vue output dir for statics, including public/assets,in index: href="/assets/favicon.ico"
-    os.path.join(BASE_DIR, 'media/'),
+    MEDIA_ROOT,
 )
 
 # en produccion los estaticos tienen que estaran recogidos aqui:
@@ -149,26 +156,6 @@ STATIC_URL = 'assets/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Media
-
-# almacen de imagenes
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-# url en la que se sirven las imagenes
-MEDIA_URL = 'media/'
-
-# if not DEBUG:
-#     WHITENOISE_USE_FINDERS = True
-#     # MEDIA_URL = ALLOWED_HOSTS[0] + '/' + MEDIA_URL
-#     WHITENOISE_ROOT = MEDIA_ROOT
-#     STORAGES = {
-#         "default": {
-#             "BACKEND": "django.core.files.storage.FileSystemStorage",
-#         },
-#         "staticfiles": {
-#             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-#         },
-#     }
 
 # debug only settings
 if DEBUG:
@@ -191,3 +178,13 @@ if DEBUG:
     CORS_ALLOW_HEADERS = (*default_headers, 'csrftoken', 'sessionid', 'cookies', 'COOKIE', 'COOKIES', 'Cookie')
 else:
     REDIRECT_BASE = 'https://tiktravel.herokuapp.com/' # https://tiktravel.herokuapp.com/, ''
+    WHITENOISE_USE_FINDERS = True
+    WHITENOISE_ROOT = MEDIA_ROOT
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
