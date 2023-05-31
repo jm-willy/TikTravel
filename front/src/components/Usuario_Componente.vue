@@ -87,7 +87,7 @@
 </script>
 
 <template>
-    <div class="min-h-screen bg-gray-400">
+    <div class="min-h-screen bg-gray-300">
     <div>
         <div v-if="user_found">
             <section v-if="self_page">

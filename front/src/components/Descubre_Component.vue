@@ -31,7 +31,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen">
     <div class="flex justify-center p-3 bg-gray-200">
       <ul class="flex items-center flex-shrink-0 space-x-6">
         <!-- Profile menu -->
@@ -69,7 +69,7 @@
 
     </div>
 
-    <div class="flex justify-center pt-10 pb-10">
+    <div class="flex justify-center pt-40">
 
       <Card_Descubre v-for="i in discover_data" :key="i.id" :profile_img_src="i['profile_pic']" :username="i['username']" :user_imgs_srcs="i['user_pics']"/>
      
@@ -92,7 +92,7 @@
                                       <a class="relative items-center justify-start inline-block px-4 py-1 overflow-hidden font-bold rounded-full group">
                                           <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
                                           <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-blue-500 opacity-100 group-hover:-translate-x-8"></span>
-                                          <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Guardar</span>
+                                          <span class="relative w-full text-left text-blue-500 transition-colors duration-200 ease-in-out group-hover:text-white">Publicar</span>
                                           <span class="absolute inset-0 border-2 border-blue-500 rounded-full"></span>
                                       </a>
                                   </button>

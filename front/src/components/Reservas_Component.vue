@@ -1,22 +1,46 @@
 <script setup>
+    import Card from '../components/Card.vue'
     import {UserStatusStore} from '@/stores/user_status'
     const user_store = UserStatusStore();
     if (!(user_store.is_logged)) {
     window.location.replace(window.location['origin']+'/login');
     }
-  var styles_list = [
-    "background-image: url('https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')",
-    "background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1280px-Bandera_de_Espa%C3%B1a.svg.png')",
-    "background-image: url('')",
-    "background-image: url('')",
-    "background-image: url('')",
-  ];
+    var styles_list = [
+      "background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg')",
+      "background-image: url('https://ep00.epimg.net/elpais/imagenes/2017/04/18/album/1492501737_090856_1492503664_album_normal.jpg')",
+    ];
 </script>
 
 <template>
-      <div class="container mx-auto">
-        <section class='px-2 overflow-y-scroll max-h-[40rem] fade-in'>
+      <div class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-100 to-gray-100 min-h-screen">
+        <section class='flex justify-center pt-52'>
           <Card v-for="item in styles_list" :key="item.id" :bg_img_src="item"/>
         </section>
       </div>
 </template>
+
+
+<style>
+
+  section {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  }
+  
+  section::-webkit-scrollbar {
+  display: none; 
+  }
+  
+  ::-webkit-scrollbar{
+  display: none;
+  }
+  
+  *{
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  }
+
+  #text {
+  font-family: 'Lobster';
+  }
+</style>
