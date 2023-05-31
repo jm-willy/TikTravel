@@ -25,7 +25,6 @@
       axios_instance.get('api-auth/x-csrf-token')
       .then(function (response) {
           console.log(response);
-          console.log(response.headers);
           console.log(response.headers['x-csrftoken']);
           csrf_token_form.value = response.headers['x-csrftoken'];
       })
