@@ -17,11 +17,12 @@
                     <span class="font-semibold text-sm text-center">Estancia</span>
                     <select id="underline_select" class="text-center block px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 focus:outline-none">
                         <option selected value="Option 3">Selecciona</option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                        <option value="Option 5">Option 5</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="alojamiento">Alojamiento</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="hostal">Hostal</option>
+                        <option value="resort">Resort</option>
+                        <option value="casa-rural">Casa rural</option>
                     </select>
                 </div>
 
@@ -29,11 +30,15 @@
                     <span class="font-semibold text-sm text-center">¿De dónde?</span>
                     <select id="underline_select" class="text-center block px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 focus:outline-none">
                         <option selected value="Option 3">Ubicación</option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                        <option value="Option 5">Option 5</option>
+                        <option value="ATL">Aeropuerto Internacional Hartsfield-Jackson (ATL)</option>
+                        <option value="LAX">Aeropuerto Internacional de Los Ángeles (LAX)</option>
+                        <option value="ORD">Aeropuerto Internacional de Chicago O'Hare (ORD)</option>
+                        <option value="LHR">Aeropuerto de Londres Heathrow (LHR)</option>
+                        <option value="CDG">Aeropuerto de París-Charles de Gaulle (CDG)</option>
+                        <option value="DXB">Aeropuerto Internacional de Dubái (DXB)</option>
+                        <option value="HND">Aeropuerto Internacional de Haneda (HND)</option>
+                        <option value="JFK">Aeropuerto Internacional John F. Kennedy (JFK)</option>
+                        <option value="SYD">Aeropuerto Internacional Kingsford Smith de Sídney (SYD)</option>
                     </select>
                 </div>
 

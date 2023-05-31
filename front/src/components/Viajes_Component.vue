@@ -1,11 +1,11 @@
 <script setup>
 import Card from '../components/Card.vue'
 var styles_list = [
-  "background-image: url('https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')",
-  "background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1280px-Bandera_de_Espa%C3%B1a.svg.png')",
-  "background-image: url('')",
-  "background-image: url('')",
-  "background-image: url('')",
+  "background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg')",
+  "background-image: url('https://ep00.epimg.net/elpais/imagenes/2017/04/18/album/1492501737_090856_1492503664_album_normal.jpg')",
+  "background-image: url('https://ichef.bbci.co.uk/news/640/cpsprodpb/52FA/production/_122524212_foto_01.jpg')",
+  "background-image: url('https://res.cloudinary.com/hello-tickets/image/upload/c_limit,f_auto,q_auto,w_1300/v1636970940/rsibwpe9q22v2s79cwpf.jpg')",
+  "background-image: url('https://www.economiadigital.es/tendenciashoy/wp-content/uploads/2020/08/ciudad-artes-1282x780.jpg')",
 ];
 </script>
 
