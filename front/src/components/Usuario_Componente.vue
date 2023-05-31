@@ -15,7 +15,11 @@
     const user_page_pics_urls = ref([])
     const user_found = ref('')
     
-    const base_host = api_store.get_api_host
+    if (api_store.is_dev) {
+        var base_host = api_store.get_api_host;
+    } else {
+        var base_host = window.location.origin+'/';
+    }
     const axios_instance = axios.create({
         baseURL: base_host,
     });

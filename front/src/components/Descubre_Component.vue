@@ -10,7 +10,12 @@
   const upload_pic_action = api_store.get_api_host + '/api-auth/upload-pics'
   const discover_data = ref([])
 
-  const base_host = api_store.get_api_host
+  // const base_host = api_store.get_api_host
+  if (api_store.is_dev) {
+    var base_host = api_store.get_api_host;
+  } else {
+    var base_host = window.location.origin+'/';
+  }
   const axios_instance = axios.create({
       baseURL: base_host,
   });
