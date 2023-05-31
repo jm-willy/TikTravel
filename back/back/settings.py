@@ -155,7 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # url en la que se sirven las imagenes
 MEDIA_URL = 'media/'
-os.environ['DEBUG'] = 'media/'
 
 # if not DEBUG:
 #     WHITENOISE_USE_FINDERS = True

@@ -78,7 +78,10 @@ def user_profile_pic(request, data: UserAtPage):
     try:
         user = User.objects.get(username=data.current_user_page[6:-1])
         pic = ProfilePic.objects.get(user_id=user.id)
-        pic = '/media/'+str(pic.pic)
+        if settings.DEBUG:
+            pic = '/media/'+str(pic.pic)
+        else:
+            pic = str(pic.pic)
         return api.create_response(request, {'success': True, "profile_pic_src": pic}, status=200)
     except User.DoesNotExist:
         try:
@@ -93,7 +96,10 @@ def user_profile_pic(request, data: UserAtPage):
 def userpage_pictures(request, data: UserAtPage):
     try:
         user = User.objects.get(username=data.current_user_page[6:-1])
-        pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=user.id)]
+        if settings.DEBUG:
+            pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=user.id)]
+        else:
+            pics = [(str(i.pic)) for i in Picture.objects.filter(user_id=user.id)]
         return api.create_response(request, {'success': True, "userpage_pics_srcs": pics}, status=200)
     except User.DoesNotExist:
         return api.create_response(request, {'success': False, "message": "User does not exist"}, status=404) 
@@ -105,11 +111,15 @@ def get_discover(request): # atributo name del input tiene que ser igual a pic_f
     data = []
     users_queryset = User.objects.all()
     # random.shuffle(users_queryset)
+    if settings.DEBUG:
+        medial_url = '/media/'
+    else:
+        medial_url = ''
     for i in users_queryset:
         try:
             profile_pic = ProfilePic.objects.get(user_id=i.id)
-            profile_pic = '/media/'+str(profile_pic.pic)
-            user_pics = [('/media/'+str(i.pic)) for i in Picture.objects.filter(user_id=i.id)]
+            profile_pic = medial_url+str(profile_pic.pic)
+            user_pics = [(medial_url+str(i.pic)) for i in Picture.objects.filter(user_id=i.id)]
             random.shuffle(user_pics)
             data.append({'user_pics': user_pics[:7], 'username': i.username, 'profile_pic': profile_pic})
         except ObjectDoesNotExist:
