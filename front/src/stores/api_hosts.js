@@ -10,8 +10,8 @@ export const ApiHostStore = defineStore('debug status', {
         } else if (window.location.origin == state.dev_host) {
           return state.debug_host[0];
         } else {
-          // return state.production_host;
-          return '';
+          return state.production_host;
+          // return '';
         }
       },
       is_dev(state) {
