@@ -21,7 +21,7 @@ from django.core.exceptions import ObjectDoesNotExist
 # else:
 #     medial_url = ''
 
-medial_url = '/media/'
+medial_url = '/' + settings.MEDIA_URL
 
 api = NinjaAPI(csrf=False)
 session = SessionStore()
