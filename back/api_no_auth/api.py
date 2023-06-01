@@ -16,12 +16,11 @@ from django.db.utils import IntegrityError
 from back import settings
 from django.core.exceptions import ObjectDoesNotExist
 
-# if settings.DEBUG:
-#     medial_url = '/media/'
-# else:
-#     medial_url = ''
+if settings.DEBUG:
+    medial_url = '/' + settings.MEDIA_URL
+else:
+    medial_url = ''
 
-medial_url = '/' + settings.MEDIA_URL
 
 api = NinjaAPI(csrf=False)
 session = SessionStore()
