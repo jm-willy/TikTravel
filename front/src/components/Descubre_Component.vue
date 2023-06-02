@@ -92,7 +92,7 @@
 
     </div>
 
-    <div class="flex justify-center pt-40">
+    <div class="flex justify-center pt-35 overflow-x-scroll">
 
       <Card_Descubre v-for="i in discover_data" :key="i.id" :profile_img_src="i['profile_pic']" :username="i['username']" :user_imgs_srcs="i['user_pics']"/>
      
