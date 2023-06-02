@@ -92,9 +92,9 @@
 
     </div>
 
-    <div class="overflow-y-scroll max-h-[40rem] fade-in pt-4 px-1 mx-auto">
+    <div class="overflow-y-scroll max-h-[40rem] pt-4 px-1 mx-auto">
 
-      <Card_Descubre v-for="i in discover_data" :key="i.id" :profile_img_src="i['profile_pic']" :username="i['username']" :user_imgs_srcs="i['user_pics']"/>
+      <Card_Descubre class="px-1 mx-auto" v-for="i in discover_data" :key="i.id" :profile_img_src="i['profile_pic']" :username="i['username']" :user_imgs_srcs="i['user_pics']"/>
      
     </div>
 
