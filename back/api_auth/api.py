@@ -25,6 +25,7 @@ else:
 api = NinjaAPI(csrf=True, auth=django_auth, urls_namespace='api_auth')
 
 from api_auth.models import Picture, ProfilePic
+
 @api.get("/hi")
 def hello(request):
     # user = User.objects.get(username=data.current_user_page[6:-1])
