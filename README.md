@@ -56,5 +56,5 @@ En los docs se pueden probar los endpoints
 
 ## Despliegue
 - DEBUG = False
-- python manage.py collectstatic
 - npm run build
+- python manage.py collectstatic
